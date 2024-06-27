@@ -134,7 +134,7 @@ namespace StreamApiClient.Library.Item.Collections
                     q.QueryParameters.Page = page;
                     q.QueryParameters.ItemsPerPage = itemsPerPage;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
-                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = orderBy;
+                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = (GetOrderByQueryParameterType)Enum.Parse(typeof(GetOrderByQueryParameterType), orderBy);
                     q.QueryParameters.IncludeThumbnails = includeThumbnails;
                 });
                 if (libraryId is not null) requestInfo.PathParameters.Add("libraryId", libraryId);

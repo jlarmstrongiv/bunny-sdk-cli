@@ -87,7 +87,7 @@ namespace LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog
                 var requestInfo = ToGetRequestInformation(q => {
                     q.QueryParameters.Start = start;
                     q.QueryParameters.End = end;
-                    if (!string.IsNullOrEmpty(order)) q.QueryParameters.Order = order;
+                    if (!string.IsNullOrEmpty(order)) q.QueryParameters.Order = (GetOrderQueryParameterType)Enum.Parse(typeof(GetOrderQueryParameterType), order);
                     if (!string.IsNullOrEmpty(status)) q.QueryParameters.Status = status;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
                 });

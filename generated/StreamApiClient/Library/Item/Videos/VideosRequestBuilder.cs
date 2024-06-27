@@ -162,7 +162,7 @@ namespace StreamApiClient.Library.Item.Videos
                     q.QueryParameters.ItemsPerPage = itemsPerPage;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
                     if (!string.IsNullOrEmpty(collection)) q.QueryParameters.Collection = collection;
-                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = orderBy;
+                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = (GetOrderByQueryParameterType)Enum.Parse(typeof(GetOrderByQueryParameterType), orderBy);
                 });
                 if (libraryId is not null) requestInfo.PathParameters.Add("libraryId", libraryId);
                 var response = await reqAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping: default, cancellationToken: cancellationToken) ?? Stream.Null;

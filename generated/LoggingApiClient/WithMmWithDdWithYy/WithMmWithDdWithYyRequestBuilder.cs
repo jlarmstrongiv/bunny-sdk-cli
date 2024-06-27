@@ -24,7 +24,7 @@ namespace LoggingApiClient.WithMmWithDdWithYy
         public Command BuildWithPullZoneIdLogRbCommand()
         {
             var command = new Command("with-pull-zone-id-log");
-            command.Description = "Builds and executes requests for operations under \{mm}-{dd}-{yy}\{pullZoneId}.log";
+            command.Description = "Builds and executes requests for operations under \\{mm}-{dd}-{yy}\\{pullZoneId}.log";
             var builder = new global::LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog.WithPullZoneIdLogRequestBuilder(PathParameters);
             var execCommands = new List<Command>();
             execCommands.Add(builder.BuildGetCommand());

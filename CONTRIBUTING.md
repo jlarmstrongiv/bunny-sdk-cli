@@ -15,7 +15,7 @@
 - `git push origin v0.0.1`
 
 ```
-gh release create v0.0.1 \
+gh release create v0.0.1 --notes="" \
   "build/bunny-sdk-osx-arm64.gz" \
   "build/bunny-sdk-osx-x64.gz" \
   "build/bunny-sdk-linux-arm64.gz" \

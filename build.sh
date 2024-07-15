@@ -3,6 +3,8 @@ set -euo pipefail
 
 rm -rf ./bin ./obj
 
+# runtime ids https://learn.microsoft.com/en-us/dotnet/core/rid-catalog
+
 dotnet publish --runtime osx-arm64
 dotnet publish --runtime osx-x64
 dotnet publish --runtime linux-arm64

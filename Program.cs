@@ -16,9 +16,10 @@ using LoggingApiClient;
 using StreamApiClient;
 
 var rootCommand = new RootCommand();
+rootCommand.Name = "bunny-sdk";
 rootCommand.Description = "Bunny SDK CLI";
 var accessKeyOption = new Option<string>(
-    "--access-key", "The key used to authenticate to Bunny CDN. Can also be passed through the BUNNY_API_ACCESS_KEY environment variable."
+    "--access-key", "The key used to authenticate with Bunny. Can also be passed through the BUNNY_ACCESS_KEY environment variable."
 );
 rootCommand.AddGlobalOption(accessKeyOption);
 
@@ -32,7 +33,7 @@ rootCommand.AddCommand(bunnyApiCommand);
 
 var edgeStorageApiCommand = new Command("edge-storage-api");
 var baseUrlOption = new Option<string>(
-    "--base-url", "The ???"
+    "--base-url", "Edge storage api regional endpoints"
 )
 {
   IsRequired = true,
@@ -65,7 +66,7 @@ var builder = new CommandLineBuilder(rootCommand)
     .UseDefaults()
     .UseRequestAdapter(context =>
     {
-      var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_API_ACCESS_KEY") ?? "";
+      var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY") ?? "";
 
       var authProvider = new ApiKeyAuthenticationProvider(accessKey, "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header);
       var adapter = new HttpClientRequestAdapter(authProvider);

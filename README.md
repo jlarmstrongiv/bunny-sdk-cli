@@ -4,7 +4,7 @@
 
 ## Installation
 
-Download the binaries from GitHub [releases](https://github.com/jlarmstrongiv/bunny-sdk-cli/releases/latest). Move them to `/usr/local/bin` or add them to `PATH`.
+Download the binary for your system from GitHub [releases](https://github.com/jlarmstrongiv/bunny-sdk-cli/releases/latest). Move it to `/usr/local/bin` or add it to `PATH`.
 
 ## Documentation
 

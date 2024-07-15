@@ -21,4 +21,14 @@
 - `git push`
 - `git tag v0.0.1`
 - `git push origin v0.0.1`
-- `gh release create v0.0.1 bin/Release/net8.0/*/bunny-sdk-cli`
+
+```
+gh release create v0.0.0 \
+  "build/bunny-sdk-osx-arm64.gz" \
+  "build/bunny-sdk-osx-x64.gz" \
+  "build/bunny-sdk-linux-arm64.gz" \
+  "build/bunny-sdk-linux-x64.gz" \
+  "build/bunny-sdk-win-arm64.gz" \
+  "build/bunny-sdk-win-x64.gz" \
+  "build/bunny-sdk-win-x86.gz"
+```

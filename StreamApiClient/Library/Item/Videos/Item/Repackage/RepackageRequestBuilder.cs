@@ -18,7 +18,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Repackage
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\{videoId}\repackage
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class RepackageRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Repackage
         /// <summary>
         /// [RepackageVideo API Docs](https://docs.bunny.net/reference/video_repackage)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class RepackageRequestBuilderPostQueryParameters 
         {
             /// <summary>Marks whether previous file versions should be kept in storage, allows for faster repackage later on. Default is true.</summary>

@@ -18,7 +18,7 @@ namespace StreamApiClient.Library.Item.Videos.Fetch
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\fetch
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class FetchRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -84,14 +84,14 @@ namespace StreamApiClient.Library.Item.Videos.Fetch
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Fetch.FetchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public FetchRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/fetch{?collectionId*,thumbnailTime*}", pathParameters)
+        public FetchRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/fetch{?collectionId,thumbnailTime}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Fetch.FetchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FetchRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/fetch{?collectionId*,thumbnailTime*}", rawUrl)
+        public FetchRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/fetch{?collectionId,thumbnailTime}", rawUrl)
         {
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace StreamApiClient.Library.Item.Videos.Fetch
         /// <summary>
         /// [FetchVideo API Docs](https://docs.bunny.net/reference/video_fetchnewvideo)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class FetchRequestBuilderPostQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

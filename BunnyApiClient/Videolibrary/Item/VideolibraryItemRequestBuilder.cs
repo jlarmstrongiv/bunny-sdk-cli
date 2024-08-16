@@ -24,7 +24,7 @@ namespace BunnyApiClient.Videolibrary.Item
     /// <summary>
     /// Builds and executes requests for operations under \videolibrary\{id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class VideolibraryItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -316,7 +316,7 @@ namespace BunnyApiClient.Videolibrary.Item
         /// <summary>
         /// [GetVideoLibrary API Docs](https://docs.bunny.net/reference/videolibrarypublic_index2)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class VideolibraryItemRequestBuilderGetQueryParameters 
         {
             [QueryParameter("includeAccessKey")]

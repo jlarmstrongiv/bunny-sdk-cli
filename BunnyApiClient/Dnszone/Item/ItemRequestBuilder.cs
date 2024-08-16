@@ -25,7 +25,7 @@ namespace BunnyApiClient.Dnszone.Item
     /// <summary>
     /// Builds and executes requests for operations under \dnszone\{-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class ItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

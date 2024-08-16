@@ -17,7 +17,7 @@ namespace BunnyApiClient.Pullzone.Item.Optimizer.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}\optimizer\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -76,14 +76,14 @@ namespace BunnyApiClient.Pullzone.Item.Optimizer.Statistics
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.Item.Optimizer.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom*,dateTo*,hourly*}", pathParameters)
+        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom,dateTo,hourly}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.Item.Optimizer.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom*,dateTo*,hourly*}", rawUrl)
+        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone/{%2Did}/optimizer/statistics{?dateFrom,dateTo,hourly}", rawUrl)
         {
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace BunnyApiClient.Pullzone.Item.Optimizer.Statistics
         /// <summary>
         /// [GetOptimizerStatistics API Docs](https://docs.bunny.net/reference/pullzonepublic_optimizerstatistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned.</summary>

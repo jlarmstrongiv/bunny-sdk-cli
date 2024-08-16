@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace BunnyApiClient.Models.PullZone.Optimizer
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     #pragma warning disable CS1591
     public enum Properties_auto_optimize
     #pragma warning restore CS1591

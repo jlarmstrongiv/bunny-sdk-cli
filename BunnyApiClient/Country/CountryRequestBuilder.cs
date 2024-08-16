@@ -18,7 +18,7 @@ namespace BunnyApiClient.Country
     /// <summary>
     /// Builds and executes requests for operations under \country
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class CountryRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

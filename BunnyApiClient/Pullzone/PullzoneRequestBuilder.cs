@@ -21,7 +21,7 @@ namespace BunnyApiClient.Pullzone
     /// <summary>
     /// Builds and executes requests for operations under \pullzone
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class PullzoneRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -187,14 +187,14 @@ namespace BunnyApiClient.Pullzone
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.PullzoneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public PullzoneRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search*}", pathParameters)
+        public PullzoneRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.PullzoneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PullzoneRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search*}", rawUrl)
+        public PullzoneRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone?includeCertificate={includeCertificate}&page={page}&perPage={perPage}{&search}", rawUrl)
         {
         }
         /// <summary>
@@ -240,7 +240,7 @@ namespace BunnyApiClient.Pullzone
         /// <summary>
         /// [ListPullZones API Docs](https://docs.bunny.net/reference/pullzonepublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class PullzoneRequestBuilderGetQueryParameters 
         {
             /// <summary>Determines if the result hostnames should contain the SSL certificate</summary>

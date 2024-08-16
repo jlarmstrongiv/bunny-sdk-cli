@@ -17,7 +17,7 @@ namespace BunnyApiClient.Pullzone.Item.Waf.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}\waf\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <returns>A <see cref="Command"/></returns>
@@ -72,14 +72,14 @@ namespace BunnyApiClient.Pullzone.Item.Waf.Statistics
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.Item.Waf.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone/{%2Did}/waf/statistics{?dateFrom*,dateTo*,hourly*}", pathParameters)
+        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/pullzone/{%2Did}/waf/statistics{?dateFrom,dateTo,hourly}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.Item.Waf.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone/{%2Did}/waf/statistics{?dateFrom*,dateTo*,hourly*}", rawUrl)
+        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/pullzone/{%2Did}/waf/statistics{?dateFrom,dateTo,hourly}", rawUrl)
         {
         }
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -98,7 +98,7 @@ namespace BunnyApiClient.Pullzone.Item.Waf.Statistics
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         #pragma warning disable CS1591
         public partial class StatisticsRequestBuilderGetQueryParameters 
         #pragma warning restore CS1591

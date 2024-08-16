@@ -36,7 +36,7 @@ namespace BunnyApiClient.Pullzone.Item
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class ItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -533,7 +533,7 @@ namespace BunnyApiClient.Pullzone.Item
         /// <summary>
         /// [GetPullZone API Docs](https://docs.bunny.net/reference/pullzonepublic_index2)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class ItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Determines if the result hostnames should contain the SSL certificate</summary>

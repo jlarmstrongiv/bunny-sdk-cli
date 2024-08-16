@@ -8,6 +8,7 @@
 
 - Increment version in `bunny-sdk.csproj`
 - `./build.sh`
+- `BUNNY_ACCESS_KEY="***" ./test.sh`
 - `git add -A`
 - `git commit -m "message"`
 - `git push`

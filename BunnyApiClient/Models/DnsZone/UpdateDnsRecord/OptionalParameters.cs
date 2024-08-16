@@ -9,7 +9,7 @@ namespace BunnyApiClient.Models.DnsZone.UpdateDnsRecord
     /// <summary>
     /// The template for adding optional properties.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class OptionalParameters : IAdditionalDataHolder, IParsable
     {
         /// <summary>The Accelerated property</summary>

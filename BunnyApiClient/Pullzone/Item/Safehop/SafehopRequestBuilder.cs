@@ -15,7 +15,7 @@ namespace BunnyApiClient.Pullzone.Item.Safehop
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}\safehop
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class SafehopRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

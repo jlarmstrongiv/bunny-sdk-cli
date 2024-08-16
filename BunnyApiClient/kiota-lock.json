@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "B5E73491B7A6051EA1161DC6A2A82C6DCF23F6C8AA0CFB53B5D53C12F30EFEB103A91377CD2F1B6694D26EDD558D869DC0DA294D885FF5D1740E10BC79B136F6",
+  "descriptionHash": "72995193DDF083873678041847A96F26BE2D9E2F3E7E42E04B3ADE76D96C032C306B446C9361E637B56248F469C5D49810810D3D994D635E373339D69CAC34D4",
   "descriptionLocation": "../../../../tsp-output/@typespec/openapi3/openapi.BunnyApi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.16.0",
+  "kiotaVersion": "1.17.0",
   "clientClassName": "BunnyApiClient",
   "clientNamespaceName": "BunnyApiClient",
   "language": "CLI",

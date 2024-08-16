@@ -19,7 +19,7 @@ namespace BunnyApiClient.Compute.Script
     /// <summary>
     /// Builds and executes requests for operations under \compute\script
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class ScriptRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -184,7 +184,7 @@ namespace BunnyApiClient.Compute.Script
         /// <summary>
         /// [ListComputeScripts API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class ScriptRequestBuilderGetQueryParameters 
         {
             [QueryParameter("page")]

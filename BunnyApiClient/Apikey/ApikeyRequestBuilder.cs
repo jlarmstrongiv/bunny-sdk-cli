@@ -17,7 +17,7 @@ namespace BunnyApiClient.Apikey
     /// <summary>
     /// Builds and executes requests for operations under \apikey
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class ApikeyRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace BunnyApiClient.Apikey
         /// <summary>
         /// [ListApiKeys API Docs](https://docs.bunny.net/reference/apikeypublic_listapikeys)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class ApikeyRequestBuilderGetQueryParameters 
         {
             [QueryParameter("page")]

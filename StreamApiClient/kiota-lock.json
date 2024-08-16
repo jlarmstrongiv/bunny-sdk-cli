@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F82594F77A7124BB88ECB00D115A293E9448F1ECC8B2324C53B1654F1ACAD3466B8FE39950875DBF67418B986E90A9DC26BCD0A498993953A080A9018B7CC4C0",
+  "descriptionHash": "24AA1DB5ABB0D09D28CF2EA4E24B2873931EF2644D3CA193FBF8A63E2C26A9254077BC5B0A9699CAB7482A5D1C483C6D3123C3F97F6946E1DD00C453EFA9D81C",
   "descriptionLocation": "../../../../tsp-output/@typespec/openapi3/openapi.StreamApi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.16.0",
+  "kiotaVersion": "1.17.0",
   "clientClassName": "StreamApiClient",
   "clientNamespaceName": "StreamApiClient",
   "language": "CLI",

@@ -26,7 +26,7 @@ namespace StreamApiClient.Library.Item.Videos.Item
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\{videoId}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class WithVideoItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -342,14 +342,14 @@ namespace StreamApiClient.Library.Item.Videos.Item
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Item.WithVideoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public WithVideoItemRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions*}", pathParameters)
+        public WithVideoItemRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Item.WithVideoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithVideoItemRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions*}", rawUrl)
+        public WithVideoItemRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/{videoId}{?enabledResolutions}", rawUrl)
         {
         }
         /// <summary>
@@ -436,7 +436,7 @@ namespace StreamApiClient.Library.Item.Videos.Item
         /// <summary>
         /// [UploadVideo API Docs](https://docs.bunny.net/reference/video_uploadvideo)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class WithVideoItemRequestBuilderPutQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -18,7 +18,7 @@ namespace BunnyApiClient.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -89,14 +89,14 @@ namespace BunnyApiClient.Statistics
         /// Instantiates a new <see cref="global::BunnyApiClient.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/statistics{?dateFrom*,dateTo*,hourly*,loadErrors*,pullZone*,serverZoneId*}", pathParameters)
+        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/statistics{?dateFrom,dateTo,hourly,loadErrors,pullZone,serverZoneId}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/statistics{?dateFrom*,dateTo*,hourly*,loadErrors*,pullZone*,serverZoneId*}", rawUrl)
+        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/statistics{?dateFrom,dateTo,hourly,loadErrors,pullZone,serverZoneId}", rawUrl)
         {
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace BunnyApiClient.Statistics
         /// <summary>
         /// [GetStatistics API Docs](https://docs.bunny.net/reference/statisticspublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             [QueryParameter("dateFrom")]

@@ -18,7 +18,7 @@ namespace BunnyApiClient.Compute.Script.Item.Variables.Item
     /// <summary>
     /// Builds and executes requests for operations under \compute\script\{id}\variables\{variableId}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class WithVariableItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

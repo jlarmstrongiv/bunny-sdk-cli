@@ -9,7 +9,7 @@ namespace BunnyApiClient.Pullzone.Item.Optimizer.Statistics
     /// <summary>
     /// Average compression chart of the responses
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsGetResponse_AverageCompressionChart : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

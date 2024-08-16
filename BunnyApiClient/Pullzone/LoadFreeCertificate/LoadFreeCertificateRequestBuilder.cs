@@ -17,7 +17,7 @@ namespace BunnyApiClient.Pullzone.LoadFreeCertificate
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\loadFreeCertificate
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class LoadFreeCertificateRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace BunnyApiClient.Pullzone.LoadFreeCertificate
         /// <summary>
         /// [LoadFreeCertificate API Docs](https://docs.bunny.net/reference/pullzonepublic_loadfreecertificate)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class LoadFreeCertificateRequestBuilderGetQueryParameters 
         {
             /// <summary>The hostname that the certificate will be loaded for</summary>

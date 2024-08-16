@@ -20,7 +20,7 @@ namespace StreamApiClient.Library.Item.Videos
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class VideosRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -230,7 +230,7 @@ namespace StreamApiClient.Library.Item.Videos
         /// <summary>
         /// [ListVideos API Docs](https://docs.bunny.net/reference/video_list)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class VideosRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

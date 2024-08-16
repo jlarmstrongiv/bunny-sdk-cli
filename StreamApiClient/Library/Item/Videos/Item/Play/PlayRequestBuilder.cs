@@ -18,7 +18,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Play
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\{videoId}\play
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class PlayRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -77,14 +77,14 @@ namespace StreamApiClient.Library.Item.Videos.Item.Play
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Item.Play.PlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public PlayRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires*,token*}", pathParameters)
+        public PlayRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires,token}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Videos.Item.Play.PlayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlayRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires*,token*}", rawUrl)
+        public PlayRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/videos/{videoId}/play{?expires,token}", rawUrl)
         {
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Play
         /// <summary>
         /// [GetVideoPlayData API Docs](https://docs.bunny.net/reference/video_getvideoplaydata)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class PlayRequestBuilderGetQueryParameters 
         {
             [QueryParameter("expires")]

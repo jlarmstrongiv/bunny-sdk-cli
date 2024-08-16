@@ -8,4 +8,4 @@ Download and gunzip the binary for your system from GitHub [releases](https://gi
 
 ## Documentation
 
-Please read the [docs](https://bunny-launcher.com/bunny-sdk/cli/) for usage and examples.
+Please read the [docs](https://bunny-launcher.net/bunny-sdk/cli/) for usage and examples.

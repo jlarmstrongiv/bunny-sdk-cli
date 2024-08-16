@@ -21,7 +21,7 @@ namespace BunnyApiClient.Storagezone
     /// <summary>
     /// Builds and executes requests for operations under \storagezone
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StoragezoneRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -172,14 +172,14 @@ namespace BunnyApiClient.Storagezone
         /// Instantiates a new <see cref="global::BunnyApiClient.Storagezone.StoragezoneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StoragezoneRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/storagezone?includeDeleted={includeDeleted}&page={page}&perPage={perPage}{&search*}", pathParameters)
+        public StoragezoneRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/storagezone?includeDeleted={includeDeleted}&page={page}&perPage={perPage}{&search}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Storagezone.StoragezoneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StoragezoneRequestBuilder(string rawUrl) : base("{+baseurl}/storagezone?includeDeleted={includeDeleted}&page={page}&perPage={perPage}{&search*}", rawUrl)
+        public StoragezoneRequestBuilder(string rawUrl) : base("{+baseurl}/storagezone?includeDeleted={includeDeleted}&page={page}&perPage={perPage}{&search}", rawUrl)
         {
         }
         /// <summary>
@@ -225,7 +225,7 @@ namespace BunnyApiClient.Storagezone
         /// <summary>
         /// [ListStorageZones API Docs](https://docs.bunny.net/reference/storagezonepublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class StoragezoneRequestBuilderGetQueryParameters 
         {
             [QueryParameter("includeDeleted")]

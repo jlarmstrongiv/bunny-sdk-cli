@@ -17,7 +17,7 @@ namespace StreamApiClient.Library.Item.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -82,14 +82,14 @@ namespace StreamApiClient.Library.Item.Statistics
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/statistics{?dateFrom*,dateTo*,hourly*,videoGuid*}", pathParameters)
+        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/library/{libraryId}/statistics{?dateFrom,dateTo,hourly,videoGuid}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::StreamApiClient.Library.Item.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/statistics{?dateFrom*,dateTo*,hourly*,videoGuid*}", rawUrl)
+        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/library/{libraryId}/statistics{?dateFrom,dateTo,hourly,videoGuid}", rawUrl)
         {
         }
         /// <summary>
@@ -114,7 +114,7 @@ namespace StreamApiClient.Library.Item.Statistics
         /// <summary>
         /// [GetVideoStatistics API Docs](https://docs.bunny.net/reference/video_getvideostatistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned.</summary>

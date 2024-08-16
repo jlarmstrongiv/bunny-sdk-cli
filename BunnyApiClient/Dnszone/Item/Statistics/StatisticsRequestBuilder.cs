@@ -17,7 +17,7 @@ namespace BunnyApiClient.Dnszone.Item.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \dnszone\{-id}\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -70,14 +70,14 @@ namespace BunnyApiClient.Dnszone.Item.Statistics
         /// Instantiates a new <see cref="global::BunnyApiClient.Dnszone.Item.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom*,dateTo*}", pathParameters)
+        public StatisticsRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom,dateTo}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Dnszone.Item.Statistics.StatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom*,dateTo*}", rawUrl)
+        public StatisticsRequestBuilder(string rawUrl) : base("{+baseurl}/dnszone/{%2Did}/statistics{?dateFrom,dateTo}", rawUrl)
         {
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace BunnyApiClient.Dnszone.Item.Statistics
         /// <summary>
         /// [GetDnsQueryStatistics API Docs](https://docs.bunny.net/reference/dnszonepublic_statistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.16.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned</summary>

@@ -4,8 +4,8 @@
 
 ## Installation
 
-Download and gunzip the binary for your system from GitHub [releases](https://github.com/jlarmstrongiv/bunny-sdk-cli/releases/latest). Move it to `/usr/local/bin` or add it to `PATH`.
+Download, gunzip, and install the binary for your system from GitHub [releases](https://github.com/jlarmstrongiv/bunny-sdk-cli/releases/latest).
 
 ## Documentation
 
-Please read the [docs](https://bunny-launcher.net/bunny-sdk/cli/) for usage and examples.
+Please read the [docs](https://bunny-launcher.net/bunny-sdk/languages/cli/) for installation, usage, and examples.

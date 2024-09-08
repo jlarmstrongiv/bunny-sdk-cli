@@ -10,6 +10,8 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Text;
 
+using Tomlyn;
+
 using BunnyApiClient;
 using EdgeStorageApiClient;
 using LoggingApiClient;
@@ -19,9 +21,13 @@ var rootCommand = new RootCommand();
 rootCommand.Name = "bunny-sdk";
 rootCommand.Description = "Bunny SDK CLI";
 var accessKeyOption = new Option<string>(
-    "--access-key", "The key used to authenticate with Bunny. Can also be passed through the BUNNY_ACCESS_KEY environment variable."
+    "--access-key", "The key used to authenticate with Bunny. Can also be passed through the BUNNY_ACCESS_KEY environment variable. Overrides --profile."
+);
+var profileOption = new Option<string>(
+    "--profile", "The name of the profile associated with the access key used to authenticate with Bunny. Can also be passed through the BUNNY_PROFILE environment variable."
 );
 rootCommand.AddGlobalOption(accessKeyOption);
+rootCommand.AddGlobalOption(profileOption);
 
 var bunnyApiCommand = new Command("bunny-api");
 var bunnyApiCommandTemp = new global::BunnyApiClient.BunnyApiClient().BuildRootCommand();
@@ -67,6 +73,54 @@ var builder = new CommandLineBuilder(rootCommand)
     .UseRequestAdapter(context =>
     {
       var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY") ?? "";
+      var profile = context.ParseResult.GetValueForOption(profileOption) ?? Environment.GetEnvironmentVariable("BUNNY_PROFILE") ?? "";
+      var profileFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".bunny", "credentials.toml");
+      var hasAccessKeyFlag = !string.IsNullOrEmpty(accessKey);
+      var hasProfileFlag = !string.IsNullOrEmpty(profile);
+      // access key (from any option source) overrides profile
+      // if not provided, fallback to profile
+      if (!hasAccessKeyFlag)
+      {
+        if (File.Exists(profileFilePath))
+        {
+          using StreamReader reader = File.OpenText(profileFilePath);
+          var profiles = Toml.ToModel<Dictionary<string, ProfileEntry>>(
+            reader.ReadToEnd(),
+            options: new TomlModelOptions
+            {
+              // the default converts the file to pascal case
+              // instead, tell it to do no conversion
+              ConvertPropertyName = s => s,
+            });
+          ProfileEntry? profileEntry = null;
+          if (!hasProfileFlag && profiles.Count == 1)
+          {
+            // the user did not specify a profile and there is only 1 profile available, select it
+            profileEntry = profiles.First()!.Value;
+          }
+          else if (hasProfileFlag)
+          {
+            // the user specified a profile, profileEntry will be non-null if it exists
+            if (!profiles.TryGetValue(profile, out profileEntry))
+            {
+              // the user specified a profile so error because the profile does not exist
+              throw new Exception($"A profile named '{profile}' does not exist in the shared credentials file.");
+            }
+          }
+          // profileEntry is null only when there is more than 1 profile available
+          if (profileEntry != null)
+          {
+            accessKey = profileEntry.accessKey;
+          }
+        }
+        else if (hasProfileFlag)
+        {
+          // the user specified a profile so error because the file does not exist
+          throw new Exception($"The shared credentials file does not exist at {profileFilePath}. Have you run 'bunny-launcher login' or 'bunny-sync login' first?");
+        }
+        // otherwise, the user specified neither access key nor profile,
+        // continue and let the handlers deal with the error
+      }
 
       var authProvider = new ApiKeyAuthenticationProvider(accessKey, "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header);
       var adapter = new HttpClientRequestAdapter(authProvider);
@@ -106,3 +160,21 @@ var builder = new CommandLineBuilder(rootCommand)
     }).RegisterCommonServices();
 
 return await builder.Build().InvokeAsync(args);
+
+class ProfileEntry
+{
+  public ProfileEntry()
+  {
+    accessKey = "";
+    email = "";
+    id = "";
+    name = "";
+  }
+
+#pragma warning disable IDE1006 // Naming Styles
+  public string accessKey { get; set; }
+  public string email { get; set; }
+  public string id { get; set; }
+  public string? name { get; set; }
+#pragma warning restore IDE1006 // Naming Styles
+}

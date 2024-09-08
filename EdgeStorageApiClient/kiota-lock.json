@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "310A1DC98692F891DD63EA84A77FF2989D88D0387FEE3E45AB0A5F7CE166440446A2E02DBB5B376434FB9EF19EB04DFD26AF7A638FF5B06F25F4237A6E2E5F44",
+  "descriptionHash": "7DEA5B1D240A5C56C2A6184F5027D119AB65442ADFAC95A777284D046EBBD15D0EA415D609357A91A11533E287B791CD6405394A2ECB9612AF4EB48EF0D899E6",
   "descriptionLocation": "../../../../tsp-output/@typespec/openapi3/openapi.EdgeStorageApi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.17.0",
+  "kiotaVersion": "1.18.0",
   "clientClassName": "EdgeStorageApiClient",
   "clientNamespaceName": "EdgeStorageApiClient",
   "language": "CLI",

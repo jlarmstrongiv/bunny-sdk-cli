@@ -4,7 +4,7 @@ using System;
 namespace StreamApiClient.Models.ManageVideos
 {
     /// <summary>The automatically detected category of the video</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum Video_category
     {
         [EnumMember(Value = "Adult")]

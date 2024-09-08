@@ -4,10 +4,11 @@
 
 ## Updating
 
+- manually upgrade dependencies in `bunny-sdk.csproj`
+- increment version in `bunny-sdk.csproj`
+- `dotnet clean`
 - `dotnet build` (only if testing locally)
 - `BUNNY_ACCESS_KEY="***" ./test.sh`
-
-- Increment version in `bunny-sdk.csproj`
 - `./build.sh`
 - `git add -A`
 - `git commit -m "message"`

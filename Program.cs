@@ -122,6 +122,11 @@ var builder = new CommandLineBuilder(rootCommand)
         // continue and let the handlers deal with the error
       }
 
+      if (string.IsNullOrEmpty(accessKey))
+      {
+        throw new Exception("Missing access key. Please pass --access-key or --profile.");
+      }
+
       var authProvider = new ApiKeyAuthenticationProvider(accessKey, "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header);
       var adapter = new HttpClientRequestAdapter(authProvider);
       var currentCommand = context.ParseResult.CommandResult;

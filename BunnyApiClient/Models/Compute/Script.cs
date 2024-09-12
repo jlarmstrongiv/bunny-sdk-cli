@@ -27,6 +27,14 @@ namespace BunnyApiClient.Models.Compute
 #endif
         /// <summary>The Deleted property</summary>
         public bool? Deleted { get; private set; }
+        /// <summary>The DeploymentKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentKey { get; private set; }
+#nullable restore
+#else
+        public string DeploymentKey { get; private set; }
+#endif
         /// <summary>The EdgeScriptVariables property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +45,8 @@ namespace BunnyApiClient.Models.Compute
 #endif
         /// <summary>The Id property</summary>
         public long? Id { get; private set; }
+        /// <summary>The IntegrationEnabled property</summary>
+        public bool? IntegrationEnabled { get; private set; }
         /// <summary>The LastModified property</summary>
         public DateTimeOffset? LastModified { get; private set; }
         /// <summary>The LinkedPullZones property</summary>
@@ -93,8 +103,10 @@ namespace BunnyApiClient.Models.Compute
                 { "CurrentReleaseId", n => { CurrentReleaseId = n.GetLongValue(); } },
                 { "DefaultHostname", n => { DefaultHostname = n.GetStringValue(); } },
                 { "Deleted", n => { Deleted = n.GetBoolValue(); } },
+                { "DeploymentKey", n => { DeploymentKey = n.GetStringValue(); } },
                 { "EdgeScriptVariables", n => { EdgeScriptVariables = n.GetCollectionOfObjectValues<global::BunnyApiClient.Models.Compute.EdgeScriptVariable>(global::BunnyApiClient.Models.Compute.EdgeScriptVariable.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Id", n => { Id = n.GetLongValue(); } },
+                { "IntegrationEnabled", n => { IntegrationEnabled = n.GetBoolValue(); } },
                 { "LastModified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "LinkedPullZones", n => { LinkedPullZones = n.GetCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.PullZone>(global::BunnyApiClient.Models.PullZone.PullZone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },

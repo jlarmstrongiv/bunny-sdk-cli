@@ -102,6 +102,10 @@ namespace BunnyApiClient.Compute.Script
             };
             searchOption.IsRequired = true;
             command.AddOption(searchOption);
+            var includeLinkedPullZonesOption = new Option<bool?>("--include-linked-pull-zones") {
+            };
+            includeLinkedPullZonesOption.IsRequired = false;
+            command.AddOption(includeLinkedPullZonesOption);
             var outputOption = new Option<FormatterType>("--output", () => FormatterType.JSON);
             command.AddOption(outputOption);
             var queryOption = new Option<string>("--query");
@@ -110,6 +114,7 @@ namespace BunnyApiClient.Compute.Script
                 var page = invocationContext.ParseResult.GetValueForOption(pageOption);
                 var perPage = invocationContext.ParseResult.GetValueForOption(perPageOption);
                 var search = invocationContext.ParseResult.GetValueForOption(searchOption);
+                var includeLinkedPullZones = invocationContext.ParseResult.GetValueForOption(includeLinkedPullZonesOption);
                 var output = invocationContext.ParseResult.GetValueForOption(outputOption);
                 var query = invocationContext.ParseResult.GetValueForOption(queryOption);
                 IOutputFilter outputFilter = invocationContext.BindingContext.GetService(typeof(IOutputFilter)) as IOutputFilter ?? throw new ArgumentNullException("outputFilter");
@@ -120,6 +125,7 @@ namespace BunnyApiClient.Compute.Script
                     q.QueryParameters.Page = page;
                     q.QueryParameters.PerPage = perPage;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
+                    q.QueryParameters.IncludeLinkedPullZones = includeLinkedPullZones;
                 });
                 var response = await reqAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping: default, cancellationToken: cancellationToken) ?? Stream.Null;
                 response = (response != Stream.Null) ? await outputFilter.FilterOutputAsync(response, query, cancellationToken) : response;
@@ -132,14 +138,14 @@ namespace BunnyApiClient.Compute.Script
         /// Instantiates a new <see cref="global::BunnyApiClient.Compute.Script.ScriptRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public ScriptRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}", pathParameters)
+        public ScriptRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}{&includeLinkedPullZones}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Compute.Script.ScriptRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ScriptRequestBuilder(string rawUrl) : base("{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}", rawUrl)
+        public ScriptRequestBuilder(string rawUrl) : base("{+baseurl}/compute/script?page={page}&perPage={perPage}&search={search}{&includeLinkedPullZones}", rawUrl)
         {
         }
         /// <summary>
@@ -188,6 +194,8 @@ namespace BunnyApiClient.Compute.Script
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
         public partial class ScriptRequestBuilderGetQueryParameters 
         {
+            [QueryParameter("includeLinkedPullZones")]
+            public bool? IncludeLinkedPullZones { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("perPage")]

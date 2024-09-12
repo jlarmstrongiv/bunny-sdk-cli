@@ -28,8 +28,13 @@ var accessKeyOption = new Option<string>(
 var profileOption = new Option<string>(
     "--profile", "The name of the profile associated with the access key used to authenticate with Bunny. Can also be passed through the BUNNY_PROFILE environment variable."
 );
+var debugOption = new Option<bool>(
+    "--debug", "Enable detailed error stacktrace. Intended for troubleshooting."
+);
 rootCommand.AddGlobalOption(accessKeyOption);
 rootCommand.AddGlobalOption(profileOption);
+rootCommand.AddGlobalOption(debugOption);
+
 
 var bunnyApiCommand = new Command("bunny-api");
 var bunnyApiCommandTemp = new global::BunnyApiClient.BunnyApiClient().BuildRootCommand();
@@ -72,8 +77,54 @@ rootCommand.AddCommand(streamApiCommand);
 
 var builder = new CommandLineBuilder(rootCommand)
     .UseDefaults()
+    .UseExceptionHandler((e, context) =>
+    {
+      var debugFlag = context.ParseResult.HasOption(debugOption) ? context.ParseResult.GetValueForOption(debugOption) : yn(Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY"));
+      if (debugFlag)
+      {
+        // write the exception stacktrace
+        // adapted from System.CommandLine.Builder.CommandLineBuilderExtensions.UseExceptionHandler internal Default handler
+        if (e is not OperationCanceledException)
+        {
+          outputColorizedErrorIfSupported(() =>
+          {
+            Console.Error.Write(context.LocalizationResources.ExceptionHandlerHeader());
+            Console.Error.WriteLine(e.ToString());
+          });
+
+          return;
+        }
+      }
+
+      if (e is ApiException httpException)
+      {
+        // output http status errors as "$code $reason" if possible
+        if (Enum.TryParse(httpException.ResponseStatusCode.ToString(), out System.Net.HttpStatusCode httpStatus))
+        {
+          var _httpResponse = new HttpResponseMessage(httpStatus);
+          if (!string.IsNullOrEmpty(_httpResponse.ReasonPhrase))
+          {
+            outputColorizedErrorIfSupported(() =>
+            {
+              Console.WriteLine($"{httpException.ResponseStatusCode} {_httpResponse.ReasonPhrase}");
+            });
+            return;
+          }
+        }
+      }
+      // catch-all, just write the short exception message
+      outputColorizedErrorIfSupported(() =>
+      {
+        Console.WriteLine(e.Message);
+      });
+    }, 1)
     .UseRequestAdapter(context =>
     {
+      if (context.ParseResult.Errors.Count > 0)
+      {
+        // there was a command parsing error, no need to continue so exit early with a fake adapter
+        return new HttpClientRequestAdapter(new ApiKeyAuthenticationProvider("invalid", "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header));
+      }
       var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY") ?? "";
       var profile = context.ParseResult.GetValueForOption(profileOption) ?? Environment.GetEnvironmentVariable("BUNNY_PROFILE") ?? "";
       var profileFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".bunny", "credentials.toml");
@@ -164,9 +215,34 @@ var builder = new CommandLineBuilder(rootCommand)
       ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
 
       return adapter;
-    }).RegisterCommonServices();
+    })
+    .RegisterCommonServices();
 
 return await builder.Build().InvokeAsync(args);
+
+static bool yn(string? s)
+{
+  if (string.IsNullOrEmpty(s)) return false;
+  s = s.Trim().ToLower();
+  return s == "y" || s == "yes" || s == "true" || s == "1" || s == "on";
+}
+
+static void outputColorizedErrorIfSupported(Action func)
+{
+  // adapted from System.CommandLine internal ConsoleHelpers
+  // https://github.com/dotnet/command-line-api/blob/9ebcd90a3e2c80c0385aa24432a50d18f7f768b9/src/System.CommandLine/ConsoleHelpers.cs#L12-L21
+  var colorsAreSupported = !(OperatingSystem.IsBrowser() || OperatingSystem.IsAndroid() || OperatingSystem.IsIOS() || OperatingSystem.IsTvOS()) && !Console.IsOutputRedirected;
+  if (colorsAreSupported)
+  {
+    Console.ResetColor();
+    Console.ForegroundColor = ConsoleColor.Red;
+  }
+  func();
+  if (colorsAreSupported)
+  {
+    Console.ResetColor();
+  }
+}
 
 class ProfileEntry
 {

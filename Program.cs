@@ -17,9 +17,11 @@ using EdgeStorageApiClient;
 using LoggingApiClient;
 using StreamApiClient;
 
-var rootCommand = new RootCommand();
-rootCommand.Name = "bunny-sdk";
-rootCommand.Description = "Bunny SDK CLI";
+var rootCommand = new RootCommand
+{
+  Name = "bunny-sdk",
+  Description = "Bunny SDK CLI"
+};
 var accessKeyOption = new Option<string>(
     "--access-key", "The key used to authenticate with Bunny. Can also be passed through the BUNNY_ACCESS_KEY environment variable. Overrides --profile."
 );

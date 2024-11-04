@@ -123,7 +123,7 @@ var builder = new CommandLineBuilder(rootCommand)
       if (context.ParseResult.Errors.Count > 0)
       {
         // there was a command parsing error, no need to continue so exit early with a fake adapter
-        return new HttpClientRequestAdapter(new ApiKeyAuthenticationProvider("invalid", "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header));
+        return new HttpClientRequestAdapter(new ApiKeyAuthenticationProvider("invalid", "accesskey", ApiKeyAuthenticationProvider.KeyLocation.Header));
       }
       var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY") ?? "";
       var profile = context.ParseResult.GetValueForOption(profileOption) ?? Environment.GetEnvironmentVariable("BUNNY_PROFILE") ?? "";
@@ -180,7 +180,7 @@ var builder = new CommandLineBuilder(rootCommand)
         throw new Exception("Missing access key. Please pass --access-key or --profile.");
       }
 
-      var authProvider = new ApiKeyAuthenticationProvider(accessKey, "AccessKey", ApiKeyAuthenticationProvider.KeyLocation.Header);
+      var authProvider = new ApiKeyAuthenticationProvider(accessKey, "accesskey", ApiKeyAuthenticationProvider.KeyLocation.Header);
       var adapter = new HttpClientRequestAdapter(authProvider);
       var currentCommand = context.ParseResult.CommandResult;
       if (currentCommand.FindResultFor(bunnyApiCommand) != null)

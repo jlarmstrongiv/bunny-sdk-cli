@@ -11,8 +11,6 @@
     <InvariantGlobalization>true</InvariantGlobalization>
   </PropertyGroup>
   <PropertyGroup>
-    <!-- TODO: is Aot useful? -->
-    <!-- <PublishAot>true</PublishAot> -->
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishSingleFile>true</PublishSingleFile>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>

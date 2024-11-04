@@ -79,7 +79,7 @@ var builder = new CommandLineBuilder(rootCommand)
     .UseDefaults()
     .UseExceptionHandler((e, context) =>
     {
-      var debugFlag = context.ParseResult.HasOption(debugOption) ? context.ParseResult.GetValueForOption(debugOption) : yn(Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY"));
+      var debugFlag = context.ParseResult.HasOption(debugOption) ? context.ParseResult.GetValueForOption(debugOption) : yn(Environment.GetEnvironmentVariable("BUNNY_DEBUG"));
       if (debugFlag)
       {
         // write the exception stacktrace

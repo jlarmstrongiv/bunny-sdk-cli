@@ -29,11 +29,14 @@ namespace EdgeStorageApiClient
         /// <returns>A Tuple&lt;List&lt;Command&gt;, List&lt;Command&gt;&gt;</returns>
         public Tuple<List<Command>, List<Command>> BuildCommand()
         {
+            var executables = new List<Command>();
             var commands = new List<Command>();
             var builder = new global::EdgeStorageApiClient.Item.WithStorageZoneNameItemRequestBuilder(PathParameters);
-            commands.Add(builder.BuildCommand());
+            var cmds = builder.BuildCommand();
+            executables.AddRange(cmds.Item1);
+            commands.AddRange(cmds.Item2);
             commands.Add(builder.BuildWithPathSlashRbCommand());
-            return new(new(0), commands);
+            return new(executables, commands);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::EdgeStorageApiClient.EdgeStorageApiClient"/> and sets the default values.
@@ -43,7 +46,19 @@ namespace EdgeStorageApiClient
         {
             var command = new RootCommand();
             command.Description = "Instantiates a new EdgeStorageApiClient and sets the default values.";
-            command.AddCommand(BuildCommand());
+            var execCommands = new List<Command>();
+            var nonExecCommands = new List<Command>();
+            var cmds = BuildCommand();
+            execCommands.AddRange(cmds.Item1);
+            nonExecCommands.AddRange(cmds.Item2);
+            foreach (var cmd in execCommands)
+            {
+                command.AddCommand(cmd);
+            }
+            foreach (var cmd in nonExecCommands.OrderBy(static c => c.Name, StringComparer.Ordinal))
+            {
+                command.AddCommand(cmd);
+            }
             command.AddCommand(BuildWithStorageZoneNameSlashRbCommand());
             return command;
         }
@@ -54,7 +69,7 @@ namespace EdgeStorageApiClient
         public Command BuildWithStorageZoneNameSlashRbCommand()
         {
             var command = new Command("with-storage-zone-name-slash");
-            command.Description = "Builds and executes requests for operations under \{storageZoneName}\";
+            command.Description = "Builds and executes requests for operations under /{storageZoneName}/";
             var builder = new global::EdgeStorageApiClient.Item.WithStorageZoneNameSlashRequestBuilder(PathParameters);
             var execCommands = new List<Command>();
             execCommands.Add(builder.BuildPostCommand());

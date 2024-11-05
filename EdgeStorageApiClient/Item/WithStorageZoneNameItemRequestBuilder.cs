@@ -25,10 +25,13 @@ namespace EdgeStorageApiClient.Item
         /// <returns>A Tuple&lt;List&lt;Command&gt;, List&lt;Command&gt;&gt;</returns>
         public Tuple<List<Command>, List<Command>> BuildCommand()
         {
+            var executables = new List<Command>();
             var commands = new List<Command>();
             var builder = new global::EdgeStorageApiClient.Item.Item.WithPathItemRequestBuilder(PathParameters);
-            commands.Add(builder.BuildCommand());
-            return new(new(0), commands);
+            var cmds = builder.BuildCommand();
+            executables.AddRange(cmds.Item1);
+            commands.AddRange(cmds.Item2);
+            return new(executables, commands);
         }
         /// <summary>
         /// Builds and executes requests for operations under \{storageZoneName}\{+path}\
@@ -37,7 +40,7 @@ namespace EdgeStorageApiClient.Item
         public Command BuildWithPathSlashRbCommand()
         {
             var command = new Command("with-path-slash");
-            command.Description = "Builds and executes requests for operations under \{storageZoneName}\{+path}\";
+            command.Description = "Builds and executes requests for operations under /{storageZoneName}/{+path}/";
             var builder = new global::EdgeStorageApiClient.Item.Item.WithPathSlashRequestBuilder(PathParameters);
             var execCommands = new List<Command>();
             execCommands.Add(builder.BuildGetCommand());

@@ -13,7 +13,8 @@
   <PropertyGroup>
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishSingleFile>true</PublishSingleFile>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- GenerateAssemblyInfo is required to include the version in the final binary -->
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <SelfContained>true</SelfContained>
     <PublishTrimmed>true</PublishTrimmed>
     <TrimMode>partial</TrimMode>

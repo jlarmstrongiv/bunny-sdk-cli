@@ -127,7 +127,7 @@ var builder = new CommandLineBuilder(rootCommand)
       }
       var accessKey = context.ParseResult.GetValueForOption(accessKeyOption) ?? Environment.GetEnvironmentVariable("BUNNY_ACCESS_KEY") ?? "";
       var profile = context.ParseResult.GetValueForOption(profileOption) ?? Environment.GetEnvironmentVariable("BUNNY_PROFILE") ?? "";
-      var profileFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".bunny", "credentials.toml");
+      var profileFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".bunny", "credentials");
       var hasAccessKeyFlag = !string.IsNullOrEmpty(accessKey);
       var hasProfileFlag = !string.IsNullOrEmpty(profile);
       // access key (from any option source) overrides profile

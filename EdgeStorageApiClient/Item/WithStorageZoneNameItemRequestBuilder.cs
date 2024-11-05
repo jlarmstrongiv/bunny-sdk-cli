@@ -2,9 +2,7 @@
 #pragma warning disable CS0618
 using EdgeStorageApiClient.Item.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
-using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Cli.Commons.Extensions;
 using Microsoft.Kiota.Cli.Commons.IO;
 using Microsoft.Kiota.Cli.Commons;
 using System.Collections.Generic;
@@ -12,14 +10,13 @@ using System.CommandLine;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 using System;
 namespace EdgeStorageApiClient.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \{storageZoneName}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithStorageZoneNameItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -28,62 +25,26 @@ namespace EdgeStorageApiClient.Item
         /// <returns>A Tuple&lt;List&lt;Command&gt;, List&lt;Command&gt;&gt;</returns>
         public Tuple<List<Command>, List<Command>> BuildCommand()
         {
-            var executables = new List<Command>();
             var commands = new List<Command>();
             var builder = new global::EdgeStorageApiClient.Item.Item.WithPathItemRequestBuilder(PathParameters);
-            var cmds = builder.BuildCommand();
-            executables.AddRange(cmds.Item1);
-            commands.AddRange(cmds.Item2);
-            executables.Add(builder.BuildListCommand());
-            return new(executables, commands);
+            commands.Add(builder.BuildCommand());
+            return new(new(0), commands);
         }
         /// <summary>
-        /// [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
+        /// Builds and executes requests for operations under \{storageZoneName}\{+path}\
         /// </summary>
         /// <returns>A <see cref="Command"/></returns>
-        public Command BuildCreateCommand()
+        public Command BuildWithPathSlashRbCommand()
         {
-            var command = new Command("create");
-            command.Description = "[DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)";
-            var storageZoneNameOption = new Option<string>("--storage-zone-name", description: "The name of your storage zone where you are connecting to.") {
-            };
-            storageZoneNameOption.IsRequired = true;
-            command.AddOption(storageZoneNameOption);
-            var bodyOption = new Option<string>("--body", description: "The request body") {
-            };
-            bodyOption.IsRequired = true;
-            command.AddOption(bodyOption);
-            var outputFileOption = new Option<FileInfo>("--output-file");
-            command.AddOption(outputFileOption);
-            command.SetHandler(async (invocationContext) => {
-                var storageZoneName = invocationContext.ParseResult.GetValueForOption(storageZoneNameOption);
-                var body = invocationContext.ParseResult.GetValueForOption(bodyOption) ?? string.Empty;
-                var outputFile = invocationContext.ParseResult.GetValueForOption(outputFileOption);
-                var cancellationToken = invocationContext.GetCancellationToken();
-                var reqAdapter = invocationContext.GetRequestAdapter();
-                using var stream = new MemoryStream(Encoding.UTF8.GetBytes(body));
-                var parseNode = ParseNodeFactoryRegistry.DefaultInstance.GetRootParseNode("application/json", stream);
-                var model = parseNode.GetObjectValue<global::EdgeStorageApiClient.Item.WithStorageZoneNamePostRequestBody>(global::EdgeStorageApiClient.Item.WithStorageZoneNamePostRequestBody.CreateFromDiscriminatorValue);
-                if (model is null) {
-                    Console.Error.WriteLine("No model data to send.");
-                    return;
-                }
-                var requestInfo = ToPostRequestInformation(model, q => {
-                });
-                if (storageZoneName is not null) requestInfo.PathParameters.Add("storageZoneName", storageZoneName);
-                requestInfo.SetContentFromParsable(reqAdapter, "application/json", model);
-                var response = await reqAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping: default, cancellationToken: cancellationToken) ?? Stream.Null;
-                if (outputFile == null) {
-                    using var reader = new StreamReader(response);
-                    var strContent = reader.ReadToEnd();
-                    Console.Write(strContent);
-                }
-                else {
-                    using var writeStream = outputFile.OpenWrite();
-                    await response.CopyToAsync(writeStream);
-                    Console.WriteLine($"Content written to {outputFile.FullName}.");
-                }
-            });
+            var command = new Command("with-path-slash");
+            command.Description = "Builds and executes requests for operations under \{storageZoneName}\{+path}\";
+            var builder = new global::EdgeStorageApiClient.Item.Item.WithPathSlashRequestBuilder(PathParameters);
+            var execCommands = new List<Command>();
+            execCommands.Add(builder.BuildGetCommand());
+            foreach (var cmd in execCommands)
+            {
+                command.AddCommand(cmd);
+            }
             return command;
         }
         /// <summary>
@@ -99,27 +60,6 @@ namespace EdgeStorageApiClient.Item
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithStorageZoneNameItemRequestBuilder(string rawUrl) : base("{+baseurl}/{storageZoneName}", rawUrl)
         {
-        }
-        /// <summary>
-        /// [DownloadZip API Docs](https://toshy.github.io/BunnyNet-PHP/edge-storage-api/#download-zip)
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(global::EdgeStorageApiClient.Item.WithStorageZoneNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(global::EdgeStorageApiClient.Item.WithStorageZoneNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream");
-            return requestInfo;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.PullZone.EdgeRule
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class EdgeRule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -27,6 +27,14 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
 #nullable restore
 #else
         public string ActionParameter2 { get; set; }
+#endif
+        /// <summary>The Action parameter 3. The value depends on other parameters of the edge rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActionParameter3 { get; set; }
+#nullable restore
+#else
+        public string ActionParameter3 { get; set; }
 #endif
         /// <summary>The ActionType property</summary>
         public double? ActionType { get; set; }
@@ -53,11 +61,13 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
         /// <summary>The unique GUID of the edge rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Guid { get; set; }
+        public string? Guid { get; private set; }
 #nullable restore
 #else
-        public string Guid { get; set; }
+        public string Guid { get; private set; }
 #endif
+        /// <summary>The OrderIndex property</summary>
+        public int? OrderIndex { get; set; }
         /// <summary>The TriggerMatchingType property</summary>
         public double? TriggerMatchingType { get; set; }
         /// <summary>The Triggers property</summary>
@@ -95,11 +105,13 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
             {
                 { "ActionParameter1", n => { ActionParameter1 = n.GetStringValue(); } },
                 { "ActionParameter2", n => { ActionParameter2 = n.GetStringValue(); } },
+                { "ActionParameter3", n => { ActionParameter3 = n.GetStringValue(); } },
                 { "ActionType", n => { ActionType = n.GetDoubleValue(); } },
                 { "Description", n => { Description = n.GetStringValue(); } },
                 { "Enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "ExtraActions", n => { ExtraActions = n.GetCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.EdgeRule.ActionObject>(global::BunnyApiClient.Models.PullZone.EdgeRule.ActionObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "Guid", n => { Guid = n.GetStringValue(); } },
+                { "OrderIndex", n => { OrderIndex = n.GetIntValue(); } },
                 { "TriggerMatchingType", n => { TriggerMatchingType = n.GetDoubleValue(); } },
                 { "Triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.EdgeRule.Trigger>(global::BunnyApiClient.Models.PullZone.EdgeRule.Trigger.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -113,11 +125,12 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ActionParameter1", ActionParameter1);
             writer.WriteStringValue("ActionParameter2", ActionParameter2);
+            writer.WriteStringValue("ActionParameter3", ActionParameter3);
             writer.WriteDoubleValue("ActionType", ActionType);
             writer.WriteStringValue("Description", Description);
             writer.WriteBoolValue("Enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.EdgeRule.ActionObject>("ExtraActions", ExtraActions);
-            writer.WriteStringValue("Guid", Guid);
+            writer.WriteIntValue("OrderIndex", OrderIndex);
             writer.WriteDoubleValue("TriggerMatchingType", TriggerMatchingType);
             writer.WriteCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.EdgeRule.Trigger>("Triggers", Triggers);
             writer.WriteAdditionalData(AdditionalData);

@@ -11,7 +11,7 @@ namespace BunnyApiClient.Models
     /// <summary>
     /// The server could not understand the request due to invalid syntax.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StructuredBadRequestResponse : ApiException, IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

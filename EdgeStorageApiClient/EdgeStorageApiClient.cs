@@ -20,7 +20,7 @@ namespace EdgeStorageApiClient
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdgeStorageApiClient : BaseCliRequestBuilder
     {
         /// <summary>
@@ -29,13 +29,11 @@ namespace EdgeStorageApiClient
         /// <returns>A Tuple&lt;List&lt;Command&gt;, List&lt;Command&gt;&gt;</returns>
         public Tuple<List<Command>, List<Command>> BuildCommand()
         {
-            var executables = new List<Command>();
             var commands = new List<Command>();
             var builder = new global::EdgeStorageApiClient.Item.WithStorageZoneNameItemRequestBuilder(PathParameters);
-            var cmds = builder.BuildCommand();
-            executables.AddRange(cmds.Item1);
-            commands.AddRange(cmds.Item2);
-            return new(executables, commands);
+            commands.Add(builder.BuildCommand());
+            commands.Add(builder.BuildWithPathSlashRbCommand());
+            return new(new(0), commands);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::EdgeStorageApiClient.EdgeStorageApiClient"/> and sets the default values.
@@ -45,16 +43,22 @@ namespace EdgeStorageApiClient
         {
             var command = new RootCommand();
             command.Description = "Instantiates a new EdgeStorageApiClient and sets the default values.";
+            command.AddCommand(BuildCommand());
+            command.AddCommand(BuildWithStorageZoneNameSlashRbCommand());
+            return command;
+        }
+        /// <summary>
+        /// Builds and executes requests for operations under \{storageZoneName}\
+        /// </summary>
+        /// <returns>A <see cref="Command"/></returns>
+        public Command BuildWithStorageZoneNameSlashRbCommand()
+        {
+            var command = new Command("with-storage-zone-name-slash");
+            command.Description = "Builds and executes requests for operations under \{storageZoneName}\";
+            var builder = new global::EdgeStorageApiClient.Item.WithStorageZoneNameSlashRequestBuilder(PathParameters);
             var execCommands = new List<Command>();
-            var nonExecCommands = new List<Command>();
-            var cmds = BuildCommand();
-            execCommands.AddRange(cmds.Item1);
-            nonExecCommands.AddRange(cmds.Item2);
+            execCommands.Add(builder.BuildPostCommand());
             foreach (var cmd in execCommands)
-            {
-                command.AddCommand(cmd);
-            }
-            foreach (var cmd in nonExecCommands.OrderBy(static c => c.Name, StringComparer.Ordinal))
             {
                 command.AddCommand(cmd);
             }

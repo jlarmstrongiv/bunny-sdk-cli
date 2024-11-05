@@ -18,7 +18,7 @@ namespace BunnyApiClient.Storagezone.Item.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \storagezone\{id}\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace BunnyApiClient.Storagezone.Item.Statistics
         /// <summary>
         /// [GetStorageZoneStatistics API Docs](https://docs.bunny.net/reference/storagezonepublic_storagezonestatistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             [QueryParameter("dateFrom")]

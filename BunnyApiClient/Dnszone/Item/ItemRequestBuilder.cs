@@ -26,7 +26,7 @@ namespace BunnyApiClient.Dnszone.Item
     /// <summary>
     /// Builds and executes requests for operations under \dnszone\{-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -153,7 +153,7 @@ namespace BunnyApiClient.Dnszone.Item
             };
             idOption.IsRequired = true;
             command.AddOption(idOption);
-            var bodyOption = new Option<string>("--body", description: "The template for adding optional properties.") {
+            var bodyOption = new Option<string>("--body", description: "The request body") {
             };
             bodyOption.IsRequired = true;
             command.AddOption(bodyOption);
@@ -172,7 +172,7 @@ namespace BunnyApiClient.Dnszone.Item
                 var reqAdapter = invocationContext.GetRequestAdapter();
                 using var stream = new MemoryStream(Encoding.UTF8.GetBytes(body));
                 var parseNode = ParseNodeFactoryRegistry.DefaultInstance.GetRootParseNode("application/json", stream);
-                var model = parseNode.GetObjectValue<global::BunnyApiClient.Dnszone.Item.PostRequestBody>(global::BunnyApiClient.Dnszone.Item.PostRequestBody.CreateFromDiscriminatorValue);
+                var model = parseNode.GetObjectValue<global::BunnyApiClient.Models.DnsZone.DnsZoneCreate>(global::BunnyApiClient.Models.DnsZone.DnsZoneCreate.CreateFromDiscriminatorValue);
                 if (model is null) {
                     Console.Error.WriteLine("No model data to send.");
                     return;
@@ -303,15 +303,15 @@ namespace BunnyApiClient.Dnszone.Item
         /// [UpdateDnsZone API Docs](https://docs.bunny.net/reference/dnszonepublic_update)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The template for adding optional properties.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::BunnyApiClient.Dnszone.Item.PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::BunnyApiClient.Models.DnsZone.DnsZoneCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::BunnyApiClient.Dnszone.Item.PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::BunnyApiClient.Models.DnsZone.DnsZoneCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

@@ -19,7 +19,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Transcribe
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\{videoId}\transcribe
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TranscribeRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -38,7 +38,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Transcribe
             };
             videoIdOption.IsRequired = true;
             command.AddOption(videoIdOption);
-            var languageOption = new Option<string>("--language") {
+            var languageOption = new Option<string>("--language", description: "Video source language, use ISO 639-1 language code") {
             };
             languageOption.IsRequired = true;
             command.AddOption(languageOption);
@@ -110,11 +110,12 @@ namespace StreamApiClient.Library.Item.Videos.Item.Transcribe
         /// <summary>
         /// [TranscribeVideo API Docs](https://docs.bunny.net/reference/video_transcribevideo)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TranscribeRequestBuilderPostQueryParameters 
         {
             [QueryParameter("force")]
             public bool? Force { get; set; }
+            /// <summary>Video source language, use ISO 639-1 language code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("language")]

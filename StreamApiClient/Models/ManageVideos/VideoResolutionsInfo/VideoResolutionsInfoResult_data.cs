@@ -10,7 +10,7 @@ namespace StreamApiClient.Models.ManageVideos.VideoResolutionsInfo
     /// <summary>
     /// The resolutions info.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VideoResolutionsInfoResult_data : global::StreamApiClient.Models.ManageVideos.VideoResolutionsInfo.VideoResolutionsInfoData, IParsable
     {
         /// <summary>

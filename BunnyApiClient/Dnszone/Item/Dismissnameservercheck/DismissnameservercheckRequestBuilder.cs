@@ -20,7 +20,7 @@ namespace BunnyApiClient.Dnszone.Item.Dismissnameservercheck
     /// <summary>
     /// Builds and executes requests for operations under \dnszone\{-id}\dismissnameservercheck
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DismissnameservercheckRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

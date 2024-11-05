@@ -1,9 +1,10 @@
 {
-  "descriptionHash": "773F2FD2BA3BCAB4A107910BBB49D8DD0930E42070CBB60EBD06BC0248E9C0FF6044A8C95AD0BEA5998399BA5FC4ED761028E73851D9CBEE8B6CB8F53E7C14AE",
+  "descriptionHash": "4F5EC2FD7A2DB9FC338D0C3795F5D55DED72BA6014B0750979C1D5FE3939E4647C501775FAEC77B531E35C13A86A50331F15C20CBE8787C082744DB96F1AED8B",
   "descriptionLocation": "../../../../tsp-output/@typespec/openapi3/openapi.LoggingApi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.18.0",
+  "kiotaVersion": "1.20.0",
   "clientClassName": "LoggingApiClient",
+  "typeAccessModifier": "Public",
   "clientNamespaceName": "LoggingApiClient",
   "language": "CLI",
   "usesBackingStore": false,

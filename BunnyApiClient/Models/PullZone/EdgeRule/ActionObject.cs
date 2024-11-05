@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.PullZone.EdgeRule
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ActionObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -27,6 +27,14 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
 #nullable restore
 #else
         public string ActionParameter2 { get; set; }
+#endif
+        /// <summary>The ActionParameter3 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActionParameter3 { get; set; }
+#nullable restore
+#else
+        public string ActionParameter3 { get; set; }
 #endif
         /// <summary>The ActionType property</summary>
         public double? ActionType { get; set; }
@@ -59,6 +67,7 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
             {
                 { "ActionParameter1", n => { ActionParameter1 = n.GetStringValue(); } },
                 { "ActionParameter2", n => { ActionParameter2 = n.GetStringValue(); } },
+                { "ActionParameter3", n => { ActionParameter3 = n.GetStringValue(); } },
                 { "ActionType", n => { ActionType = n.GetDoubleValue(); } },
             };
         }
@@ -71,6 +80,7 @@ namespace BunnyApiClient.Models.PullZone.EdgeRule
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ActionParameter1", ActionParameter1);
             writer.WriteStringValue("ActionParameter2", ActionParameter2);
+            writer.WriteStringValue("ActionParameter3", ActionParameter3);
             writer.WriteDoubleValue("ActionType", ActionType);
             writer.WriteAdditionalData(AdditionalData);
         }

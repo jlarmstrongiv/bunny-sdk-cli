@@ -5,13 +5,12 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace BunnyApiClient.Dnszone.Item
+namespace BunnyApiClient.Models.DnsZone
 {
-    /// <summary>
-    /// The template for adding optional properties.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
-    public partial class PostRequestBody : IAdditionalDataHolder, IParsable
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
+    public partial class DnsZoneCreate : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,21 +47,21 @@ namespace BunnyApiClient.Dnszone.Item
         public string SoaEmail { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::BunnyApiClient.Dnszone.Item.PostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::BunnyApiClient.Models.DnsZone.DnsZoneCreate"/> and sets the default values.
         /// </summary>
-        public PostRequestBody()
+        public DnsZoneCreate()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::BunnyApiClient.Dnszone.Item.PostRequestBody"/></returns>
+        /// <returns>A <see cref="global::BunnyApiClient.Models.DnsZone.DnsZoneCreate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::BunnyApiClient.Dnszone.Item.PostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::BunnyApiClient.Models.DnsZone.DnsZoneCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::BunnyApiClient.Dnszone.Item.PostRequestBody();
+            return new global::BunnyApiClient.Models.DnsZone.DnsZoneCreate();
         }
         /// <summary>
         /// The deserialization information for the current model

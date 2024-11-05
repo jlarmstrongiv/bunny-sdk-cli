@@ -18,7 +18,7 @@ namespace BunnyApiClient.Storagezone.Item.ResetPassword
     /// <summary>
     /// Builds and executes requests for operations under \storagezone\{id}\resetPassword
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResetPasswordRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

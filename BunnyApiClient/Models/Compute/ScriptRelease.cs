@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.Compute
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ScriptRelease : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -37,6 +37,14 @@ namespace BunnyApiClient.Models.Compute
 #nullable restore
 #else
         public string Code { get; set; }
+#endif
+        /// <summary>The CommitSha property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CommitSha { get; set; }
+#nullable restore
+#else
+        public string CommitSha { get; set; }
 #endif
         /// <summary>The DatePublished property</summary>
         public DateTimeOffset? DatePublished { get; set; }
@@ -92,6 +100,7 @@ namespace BunnyApiClient.Models.Compute
                 { "Author", n => { Author = n.GetStringValue(); } },
                 { "AuthorEmail", n => { AuthorEmail = n.GetStringValue(); } },
                 { "Code", n => { Code = n.GetStringValue(); } },
+                { "CommitSha", n => { CommitSha = n.GetStringValue(); } },
                 { "DatePublished", n => { DatePublished = n.GetDateTimeOffsetValue(); } },
                 { "DateReleased", n => { DateReleased = n.GetDateTimeOffsetValue(); } },
                 { "Deleted", n => { Deleted = n.GetBoolValue(); } },
@@ -111,6 +120,7 @@ namespace BunnyApiClient.Models.Compute
             writer.WriteStringValue("Author", Author);
             writer.WriteStringValue("AuthorEmail", AuthorEmail);
             writer.WriteStringValue("Code", Code);
+            writer.WriteStringValue("CommitSha", CommitSha);
             writer.WriteDateTimeOffsetValue("DatePublished", DatePublished);
             writer.WriteDateTimeOffsetValue("DateReleased", DateReleased);
             writer.WriteBoolValue("Deleted", Deleted);

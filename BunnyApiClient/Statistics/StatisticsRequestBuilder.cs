@@ -19,7 +19,7 @@ namespace BunnyApiClient.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -122,7 +122,7 @@ namespace BunnyApiClient.Statistics
         /// <summary>
         /// [GetStatistics API Docs](https://docs.bunny.net/reference/statisticspublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             [QueryParameter("dateFrom")]

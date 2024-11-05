@@ -20,7 +20,7 @@ namespace StreamApiClient.Library.Item.Collections
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\collections
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CollectionsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -136,7 +136,7 @@ namespace StreamApiClient.Library.Item.Collections
                     q.QueryParameters.Page = page;
                     q.QueryParameters.ItemsPerPage = itemsPerPage;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
-                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = (GetOrderByQueryParameterType)Enum.Parse(typeof(GetOrderByQueryParameterType), orderBy);
+                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = orderBy;
                     q.QueryParameters.IncludeThumbnails = includeThumbnails;
                 });
                 if (libraryId is not null) requestInfo.PathParameters.Add("libraryId", libraryId);
@@ -204,7 +204,7 @@ namespace StreamApiClient.Library.Item.Collections
         /// <summary>
         /// [GetCollectionList API Docs](https://docs.bunny.net/reference/collection_list)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CollectionsRequestBuilderGetQueryParameters 
         {
             [QueryParameter("includeThumbnails")]

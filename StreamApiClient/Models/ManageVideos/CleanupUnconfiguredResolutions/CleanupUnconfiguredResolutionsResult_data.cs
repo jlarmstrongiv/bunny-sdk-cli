@@ -10,7 +10,7 @@ namespace StreamApiClient.Models.ManageVideos.CleanupUnconfiguredResolutions
     /// <summary>
     /// The resolutions were successfully deleted
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CleanupUnconfiguredResolutionsResult_data : global::StreamApiClient.Models.ManageVideos.CleanupUnconfiguredResolutions.CleanupUnconfiguredResolutionsData, IParsable
     {
         /// <summary>

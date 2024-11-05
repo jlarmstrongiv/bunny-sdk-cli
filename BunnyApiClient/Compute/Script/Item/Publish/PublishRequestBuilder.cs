@@ -19,7 +19,7 @@ namespace BunnyApiClient.Compute.Script.Item.Publish
     /// <summary>
     /// Builds and executes requests for operations under \compute\script\{id}\publish
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PublishRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -113,7 +113,7 @@ namespace BunnyApiClient.Compute.Script.Item.Publish
         /// <summary>
         /// [PublishComputeScript API Docs](https://docs.bunny.net/reference/computeedgescriptpublic_publish)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublishRequestBuilderPostQueryParameters 
         {
             /// <summary>The UUID of the script release that will be published</summary>

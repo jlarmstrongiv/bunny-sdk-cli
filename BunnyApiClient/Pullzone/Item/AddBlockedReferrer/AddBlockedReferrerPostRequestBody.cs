@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Pullzone.Item.AddBlockedReferrer
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AddBlockedReferrerPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

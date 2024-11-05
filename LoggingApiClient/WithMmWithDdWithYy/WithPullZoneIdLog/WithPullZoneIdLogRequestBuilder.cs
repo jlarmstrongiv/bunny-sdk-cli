@@ -18,7 +18,7 @@ namespace LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog
     /// <summary>
     /// Builds and executes requests for operations under \{mm}-{dd}-{yy}\{pullZoneId}.log
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPullZoneIdLogRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -29,15 +29,15 @@ namespace LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog
         {
             var command = new Command("get");
             command.Description = "[LoggingApi API Docs](https://docs.bunny.net/docs/cdn-logging-api)";
-            var mmOption = new Option<int?>("--mm") {
+            var mmOption = new Option<string>("--mm") {
             };
             mmOption.IsRequired = true;
             command.AddOption(mmOption);
-            var ddOption = new Option<int?>("--dd") {
+            var ddOption = new Option<string>("--dd") {
             };
             ddOption.IsRequired = true;
             command.AddOption(ddOption);
-            var yyOption = new Option<int?>("--yy") {
+            var yyOption = new Option<string>("--yy") {
             };
             yyOption.IsRequired = true;
             command.AddOption(yyOption);
@@ -89,7 +89,7 @@ namespace LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog
                 var requestInfo = ToGetRequestInformation(q => {
                     q.QueryParameters.Start = start;
                     q.QueryParameters.End = end;
-                    if (!string.IsNullOrEmpty(order)) q.QueryParameters.Order = (GetOrderQueryParameterType)Enum.Parse(typeof(GetOrderQueryParameterType), order);
+                    if (!string.IsNullOrEmpty(order)) q.QueryParameters.Order = order;
                     if (!string.IsNullOrEmpty(status)) q.QueryParameters.Status = status;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
                 });
@@ -148,7 +148,7 @@ namespace LoggingApiClient.WithMmWithDdWithYy.WithPullZoneIdLog
         /// <summary>
         /// [LoggingApi API Docs](https://docs.bunny.net/docs/cdn-logging-api)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPullZoneIdLogRequestBuilderGetQueryParameters 
         {
             [QueryParameter("end")]

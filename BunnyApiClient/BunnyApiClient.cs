@@ -7,10 +7,12 @@ using BunnyApiClient.Compute;
 using BunnyApiClient.Country;
 using BunnyApiClient.Dmca;
 using BunnyApiClient.Dnszone;
+using BunnyApiClient.Integration;
 using BunnyApiClient.Pullzone;
 using BunnyApiClient.Purge;
 using BunnyApiClient.Region;
 using BunnyApiClient.Search;
+using BunnyApiClient.Shield;
 using BunnyApiClient.Statistics;
 using BunnyApiClient.Storagezone;
 using BunnyApiClient.User;
@@ -34,7 +36,7 @@ namespace BunnyApiClient
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BunnyApiClient : BaseCliRequestBuilder
     {
         /// <summary>
@@ -176,6 +178,23 @@ namespace BunnyApiClient
             return command;
         }
         /// <summary>
+        /// The integration property
+        /// </summary>
+        /// <returns>A <see cref="Command"/></returns>
+        public Command BuildIntegrationNavCommand()
+        {
+            var command = new Command("integration");
+            command.Description = "The integration property";
+            var builder = new global::BunnyApiClient.Integration.IntegrationRequestBuilder(PathParameters);
+            var nonExecCommands = new List<Command>();
+            nonExecCommands.Add(builder.BuildGithubNavCommand());
+            foreach (var cmd in nonExecCommands)
+            {
+                command.AddCommand(cmd);
+            }
+            return command;
+        }
+        /// <summary>
         /// The pullzone property
         /// </summary>
         /// <returns>A <see cref="Command"/></returns>
@@ -190,6 +209,8 @@ namespace BunnyApiClient
             execCommands.Add(builder.BuildCreateCommand());
             execCommands.Add(builder.BuildListCommand());
             nonExecCommands.Add(builder.BuildLoadFreeCertificateNavCommand());
+            nonExecCommands.Add(builder.BuildSetZoneSecurityEnabledNavCommand());
+            nonExecCommands.Add(builder.BuildSetZoneSecurityIncludeHashRemoteIPEnabledNavCommand());
             var cmds = builder.BuildCommand();
             execCommands.AddRange(cmds.Item1);
             nonExecCommands.AddRange(cmds.Item2);
@@ -253,10 +274,12 @@ namespace BunnyApiClient
             command.AddCommand(BuildCountryNavCommand());
             command.AddCommand(BuildDmcaNavCommand());
             command.AddCommand(BuildDnszoneNavCommand());
+            command.AddCommand(BuildIntegrationNavCommand());
             command.AddCommand(BuildPullzoneNavCommand());
             command.AddCommand(BuildPurgeNavCommand());
             command.AddCommand(BuildRegionNavCommand());
             command.AddCommand(BuildSearchNavCommand());
+            command.AddCommand(BuildShieldNavCommand());
             command.AddCommand(BuildStatisticsNavCommand());
             command.AddCommand(BuildStoragezoneNavCommand());
             command.AddCommand(BuildUserNavCommand());
@@ -275,6 +298,28 @@ namespace BunnyApiClient
             var execCommands = new List<Command>();
             execCommands.Add(builder.BuildGetCommand());
             foreach (var cmd in execCommands)
+            {
+                command.AddCommand(cmd);
+            }
+            return command;
+        }
+        /// <summary>
+        /// The shield property
+        /// </summary>
+        /// <returns>A <see cref="Command"/></returns>
+        public Command BuildShieldNavCommand()
+        {
+            var command = new Command("shield");
+            command.Description = "The shield property";
+            var builder = new global::BunnyApiClient.Shield.ShieldRequestBuilder(PathParameters);
+            var nonExecCommands = new List<Command>();
+            nonExecCommands.Add(builder.BuildMetricsNavCommand());
+            nonExecCommands.Add(builder.BuildRateLimitNavCommand());
+            nonExecCommands.Add(builder.BuildRateLimitsNavCommand());
+            nonExecCommands.Add(builder.BuildShieldZoneNavCommand());
+            nonExecCommands.Add(builder.BuildShieldZonesNavCommand());
+            nonExecCommands.Add(builder.BuildWafNavCommand());
+            foreach (var cmd in nonExecCommands)
             {
                 command.AddCommand(cmd);
             }

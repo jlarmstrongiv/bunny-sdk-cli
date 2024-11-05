@@ -19,7 +19,7 @@ namespace StreamApiClient.Library.Item.Videos.Fetch
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\fetch
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FetchRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -119,7 +119,7 @@ namespace StreamApiClient.Library.Item.Videos.Fetch
         /// <summary>
         /// [FetchVideo API Docs](https://docs.bunny.net/reference/video_fetchnewvideo)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FetchRequestBuilderPostQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -18,7 +18,7 @@ namespace BunnyApiClient.Videolibrary.ResetApiKey
     /// <summary>
     /// Builds and executes requests for operations under \videolibrary\resetApiKey
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResetApiKeyRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace BunnyApiClient.Videolibrary.ResetApiKey
         /// <summary>
         /// [ResetPasswordQuery API Docs](https://docs.bunny.net/reference/videolibrarypublic_resetpassword)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResetApiKeyRequestBuilderPostQueryParameters 
         {
             /// <summary>The ID of the Video Library that should have the password reset</summary>

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.StreamVideoLibrary
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class VideoLibrary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -110,6 +110,10 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
 #endif
         /// <summary>The date when the video library was created</summary>
         public DateTimeOffset? DateCreated { get; private set; }
+        /// <summary>The DrmBasePriceOverride property</summary>
+        public double? DrmBasePriceOverride { get; set; }
+        /// <summary>The DrmCostPerLicenseOverride property</summary>
+        public double? DrmCostPerLicenseOverride { get; set; }
         /// <summary>The DrmVersion property</summary>
         public long? DrmVersion { get; private set; }
         /// <summary>Determines if content tagging should be enabled for this library.</summary>
@@ -126,12 +130,16 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
         public bool? EnableDRM { get; set; }
         /// <summary>Determines if the MP4 fallback feature is enabled</summary>
         public bool? EnableMP4Fallback { get; set; }
+        /// <summary>The EnableMultiAudioTrackSupport property</summary>
+        public bool? EnableMultiAudioTrackSupport { get; set; }
         /// <summary>Determines if the automatic audio transcribing is currently enabled for this zone.</summary>
         public bool? EnableTranscribing { get; set; }
         /// <summary>Determines if automatic transcribing description generation is currently enabled.</summary>
         public bool? EnableTranscribingDescriptionGeneration { get; set; }
         /// <summary>Determines if automatic transcribing title generation is currently enabled.</summary>
         public bool? EnableTranscribingTitleGeneration { get; set; }
+        /// <summary>The EncodingTier property</summary>
+        public int? EncodingTier { get; set; }
         /// <summary>The captions font family.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,8 +160,16 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
         public bool? HasWatermark { get; private set; }
         /// <summary>The Id property</summary>
         public long? Id { get; private set; }
+        /// <summary>The JitEncodingEnabled property</summary>
+        public bool? JitEncodingEnabled { get; set; }
         /// <summary>Determines if the original video files should be stored after encoding</summary>
         public bool? KeepOriginalFiles { get; set; }
+        /// <summary>The MonthlyChargesEnterpriseDrm property</summary>
+        public double? MonthlyChargesEnterpriseDrm { get; set; }
+        /// <summary>The MonthlyChargesPremiumEncoding property</summary>
+        public double? MonthlyChargesPremiumEncoding { get; set; }
+        /// <summary>The MonthlyChargesTranscribing property</summary>
+        public double? MonthlyChargesTranscribing { get; set; }
         /// <summary>The name of the Video Library.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +177,14 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The OutputCodecs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OutputCodecs { get; set; }
+#nullable restore
+#else
+        public string OutputCodecs { get; set; }
 #endif
         /// <summary>The key color of the player.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -172,6 +196,8 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
 #endif
         /// <summary>Determines if the player token authentication is enabled</summary>
         public bool? PlayerTokenAuthenticationEnabled { get; set; }
+        /// <summary>The PremiumEncodingPriceOverride property</summary>
+        public double? PremiumEncodingPriceOverride { get; set; }
         /// <summary>The ID of the connected underlying pull zone</summary>
         public long? PullZoneId { get; private set; }
         /// <summary>The PullZoneType property</summary>
@@ -189,10 +215,10 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
         /// <summary>The geo-replication regions of the underlying storage zone</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::BunnyApiClient.Models.StreamVideoLibrary.ReplicationRegions?>? ReplicationRegions { get; private set; }
+        public List<global::BunnyApiClient.Models.StreamVideoLibrary.ReplicationRegions?>? ReplicationRegions { get; set; }
 #nullable restore
 #else
-        public List<global::BunnyApiClient.Models.StreamVideoLibrary.ReplicationRegions?> ReplicationRegions { get; private set; }
+        public List<global::BunnyApiClient.Models.StreamVideoLibrary.ReplicationRegions?> ReplicationRegions { get; set; }
 #endif
         /// <summary>Determines if the video watch heatmap should be displayed in the player.</summary>
         public bool? ShowHeatmap { get; set; }
@@ -210,6 +236,8 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
 #else
         public List<string> TranscribingCaptionLanguages { get; set; }
 #endif
+        /// <summary>The TranscribingPriceOverride property</summary>
+        public double? TranscribingPriceOverride { get; set; }
         /// <summary>The UI language of the player</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -218,6 +246,8 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
 #else
         public string UILanguage { get; set; }
 #endif
+        /// <summary>The UseSeparateAudioStream property</summary>
+        public bool? UseSeparateAudioStream { get; set; }
         /// <summary>The URL of the VAST tag endpoint for advertising configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -300,22 +330,32 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
                 { "Controls", n => { Controls = n.GetStringValue(); } },
                 { "CustomHTML", n => { CustomHTML = n.GetStringValue(); } },
                 { "DateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "DrmBasePriceOverride", n => { DrmBasePriceOverride = n.GetDoubleValue(); } },
+                { "DrmCostPerLicenseOverride", n => { DrmCostPerLicenseOverride = n.GetDoubleValue(); } },
                 { "DrmVersion", n => { DrmVersion = n.GetLongValue(); } },
                 { "EnableContentTagging", n => { EnableContentTagging = n.GetBoolValue(); } },
                 { "EnableDRM", n => { EnableDRM = n.GetBoolValue(); } },
                 { "EnableMP4Fallback", n => { EnableMP4Fallback = n.GetBoolValue(); } },
+                { "EnableMultiAudioTrackSupport", n => { EnableMultiAudioTrackSupport = n.GetBoolValue(); } },
                 { "EnableTranscribing", n => { EnableTranscribing = n.GetBoolValue(); } },
                 { "EnableTranscribingDescriptionGeneration", n => { EnableTranscribingDescriptionGeneration = n.GetBoolValue(); } },
                 { "EnableTranscribingTitleGeneration", n => { EnableTranscribingTitleGeneration = n.GetBoolValue(); } },
                 { "EnabledResolutions", n => { EnabledResolutions = n.GetStringValue(); } },
+                { "EncodingTier", n => { EncodingTier = n.GetIntValue(); } },
                 { "FontFamily", n => { FontFamily = n.GetStringValue(); } },
                 { "GoogleWidevineDrm", n => { GoogleWidevineDrm = n.GetObjectValue<global::BunnyApiClient.Models.StreamVideoLibrary.VideoLibrary_GoogleWidevineDrm>(global::BunnyApiClient.Models.StreamVideoLibrary.VideoLibrary_GoogleWidevineDrm.CreateFromDiscriminatorValue); } },
                 { "HasWatermark", n => { HasWatermark = n.GetBoolValue(); } },
                 { "Id", n => { Id = n.GetLongValue(); } },
+                { "JitEncodingEnabled", n => { JitEncodingEnabled = n.GetBoolValue(); } },
                 { "KeepOriginalFiles", n => { KeepOriginalFiles = n.GetBoolValue(); } },
+                { "MonthlyChargesEnterpriseDrm", n => { MonthlyChargesEnterpriseDrm = n.GetDoubleValue(); } },
+                { "MonthlyChargesPremiumEncoding", n => { MonthlyChargesPremiumEncoding = n.GetDoubleValue(); } },
+                { "MonthlyChargesTranscribing", n => { MonthlyChargesTranscribing = n.GetDoubleValue(); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
+                { "OutputCodecs", n => { OutputCodecs = n.GetStringValue(); } },
                 { "PlayerKeyColor", n => { PlayerKeyColor = n.GetStringValue(); } },
                 { "PlayerTokenAuthenticationEnabled", n => { PlayerTokenAuthenticationEnabled = n.GetBoolValue(); } },
+                { "PremiumEncodingPriceOverride", n => { PremiumEncodingPriceOverride = n.GetDoubleValue(); } },
                 { "PullZoneId", n => { PullZoneId = n.GetLongValue(); } },
                 { "PullZoneType", n => { PullZoneType = n.GetDoubleValue(); } },
                 { "ReadOnlyApiKey", n => { ReadOnlyApiKey = n.GetStringValue(); } },
@@ -326,7 +366,9 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
                 { "StorageZoneId", n => { StorageZoneId = n.GetLongValue(); } },
                 { "TrafficUsage", n => { TrafficUsage = n.GetLongValue(); } },
                 { "TranscribingCaptionLanguages", n => { TranscribingCaptionLanguages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "TranscribingPriceOverride", n => { TranscribingPriceOverride = n.GetDoubleValue(); } },
                 { "UILanguage", n => { UILanguage = n.GetStringValue(); } },
+                { "UseSeparateAudioStream", n => { UseSeparateAudioStream = n.GetBoolValue(); } },
                 { "VastTagUrl", n => { VastTagUrl = n.GetStringValue(); } },
                 { "ViAiPublisherId", n => { ViAiPublisherId = n.GetStringValue(); } },
                 { "VideoCount", n => { VideoCount = n.GetLongValue(); } },
@@ -360,21 +402,34 @@ namespace BunnyApiClient.Models.StreamVideoLibrary
             writer.WriteIntValue("CaptionsFontSize", CaptionsFontSize);
             writer.WriteStringValue("Controls", Controls);
             writer.WriteStringValue("CustomHTML", CustomHTML);
+            writer.WriteDoubleValue("DrmBasePriceOverride", DrmBasePriceOverride);
+            writer.WriteDoubleValue("DrmCostPerLicenseOverride", DrmCostPerLicenseOverride);
             writer.WriteBoolValue("EnableContentTagging", EnableContentTagging);
             writer.WriteStringValue("EnabledResolutions", EnabledResolutions);
             writer.WriteBoolValue("EnableDRM", EnableDRM);
             writer.WriteBoolValue("EnableMP4Fallback", EnableMP4Fallback);
+            writer.WriteBoolValue("EnableMultiAudioTrackSupport", EnableMultiAudioTrackSupport);
             writer.WriteBoolValue("EnableTranscribing", EnableTranscribing);
             writer.WriteBoolValue("EnableTranscribingDescriptionGeneration", EnableTranscribingDescriptionGeneration);
             writer.WriteBoolValue("EnableTranscribingTitleGeneration", EnableTranscribingTitleGeneration);
+            writer.WriteIntValue("EncodingTier", EncodingTier);
             writer.WriteStringValue("FontFamily", FontFamily);
+            writer.WriteBoolValue("JitEncodingEnabled", JitEncodingEnabled);
             writer.WriteBoolValue("KeepOriginalFiles", KeepOriginalFiles);
+            writer.WriteDoubleValue("MonthlyChargesEnterpriseDrm", MonthlyChargesEnterpriseDrm);
+            writer.WriteDoubleValue("MonthlyChargesPremiumEncoding", MonthlyChargesPremiumEncoding);
+            writer.WriteDoubleValue("MonthlyChargesTranscribing", MonthlyChargesTranscribing);
             writer.WriteStringValue("Name", Name);
+            writer.WriteStringValue("OutputCodecs", OutputCodecs);
             writer.WriteStringValue("PlayerKeyColor", PlayerKeyColor);
             writer.WriteBoolValue("PlayerTokenAuthenticationEnabled", PlayerTokenAuthenticationEnabled);
+            writer.WriteDoubleValue("PremiumEncodingPriceOverride", PremiumEncodingPriceOverride);
+            writer.WriteCollectionOfEnumValues<global::BunnyApiClient.Models.StreamVideoLibrary.ReplicationRegions>("ReplicationRegions", ReplicationRegions);
             writer.WriteBoolValue("ShowHeatmap", ShowHeatmap);
             writer.WriteCollectionOfPrimitiveValues<string>("TranscribingCaptionLanguages", TranscribingCaptionLanguages);
+            writer.WriteDoubleValue("TranscribingPriceOverride", TranscribingPriceOverride);
             writer.WriteStringValue("UILanguage", UILanguage);
+            writer.WriteBoolValue("UseSeparateAudioStream", UseSeparateAudioStream);
             writer.WriteStringValue("VastTagUrl", VastTagUrl);
             writer.WriteStringValue("ViAiPublisherId", ViAiPublisherId);
             writer.WriteIntValue("WatermarkHeight", WatermarkHeight);

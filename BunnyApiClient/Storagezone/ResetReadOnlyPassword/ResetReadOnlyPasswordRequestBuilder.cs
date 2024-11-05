@@ -18,7 +18,7 @@ namespace BunnyApiClient.Storagezone.ResetReadOnlyPassword
     /// <summary>
     /// Builds and executes requests for operations under \storagezone\resetReadOnlyPassword
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResetReadOnlyPasswordRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -80,7 +80,7 @@ namespace BunnyApiClient.Storagezone.ResetReadOnlyPassword
         /// <summary>
         /// [ResetReadOnlyPassword API Docs](https://docs.bunny.net/reference/storagezonepublic_resetreadonlypassword)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResetReadOnlyPasswordRequestBuilderPostQueryParameters 
         {
             [QueryParameter("id")]

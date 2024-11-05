@@ -16,9 +16,9 @@ using System;
 namespace EdgeStorageApiClient.Item.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \{storageZoneName}\{path}\{fileName}
+    /// Builds and executes requests for operations under \{storageZoneName}\{+path}\{fileName}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFileNameItemRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -174,14 +174,14 @@ namespace EdgeStorageApiClient.Item.Item.Item
         /// Instantiates a new <see cref="global::EdgeStorageApiClient.Item.Item.Item.WithFileNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public WithFileNameItemRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/{storageZoneName}/{path}/{fileName}", pathParameters)
+        public WithFileNameItemRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/{storageZoneName}/{+path}/{fileName}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::EdgeStorageApiClient.Item.Item.Item.WithFileNameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithFileNameItemRequestBuilder(string rawUrl) : base("{+baseurl}/{storageZoneName}/{path}/{fileName}", rawUrl)
+        public WithFileNameItemRequestBuilder(string rawUrl) : base("{+baseurl}/{storageZoneName}/{+path}/{fileName}", rawUrl)
         {
         }
         /// <summary>

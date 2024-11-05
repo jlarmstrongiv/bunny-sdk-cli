@@ -20,7 +20,7 @@ namespace LoggingApiClient
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LoggingApiClient : BaseCliRequestBuilder
     {
         /// <summary>
@@ -41,7 +41,7 @@ namespace LoggingApiClient
         public Command BuildWithMmWithDdWithYyRbCommand()
         {
             var command = new Command("with-mm-with-dd-with-yy");
-            command.Description = "Builds and executes requests for operations under /{mm}-{dd}-{yy}";
+            command.Description = "Builds and executes requests for operations under \{mm}-{dd}-{yy}";
             var builder = new global::LoggingApiClient.WithMmWithDdWithYy.WithMmWithDdWithYyRequestBuilder(PathParameters);
             var nonExecCommands = new List<Command>();
             nonExecCommands.Add(builder.BuildWithPullZoneIdLogRbCommand());

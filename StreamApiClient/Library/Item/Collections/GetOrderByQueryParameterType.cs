@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace StreamApiClient.Library.Item.Collections
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public enum GetOrderByQueryParameterType
     #pragma warning restore CS1591

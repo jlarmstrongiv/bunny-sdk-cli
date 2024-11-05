@@ -22,7 +22,7 @@ namespace BunnyApiClient.Storagezone
     /// <summary>
     /// Builds and executes requests for operations under \storagezone
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StoragezoneRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -226,7 +226,7 @@ namespace BunnyApiClient.Storagezone
         /// <summary>
         /// [ListStorageZones API Docs](https://docs.bunny.net/reference/storagezonepublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StoragezoneRequestBuilderGetQueryParameters 
         {
             [QueryParameter("includeDeleted")]

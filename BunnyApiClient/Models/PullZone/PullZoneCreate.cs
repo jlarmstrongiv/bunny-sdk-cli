@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.PullZone
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class PullZoneCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -305,6 +305,8 @@ namespace BunnyApiClient.Models.PullZone
         public bool? OptimizerEnabled { get; set; }
         /// <summary>Determines the image manipulation should be enabled</summary>
         public bool? OptimizerEnableManipulationEngine { get; set; }
+        /// <summary>The OptimizerEnableUpscaling property</summary>
+        public bool? OptimizerEnableUpscaling { get; set; }
         /// <summary>Determines if the WebP optimization should be enabled</summary>
         public bool? OptimizerEnableWebP { get; set; }
         /// <summary>Determines if the optimizer class list should be enforced</summary>
@@ -337,6 +339,8 @@ namespace BunnyApiClient.Models.PullZone
 #else
         public string OptimizerStaticHtmlWordPressPath { get; set; }
 #endif
+        /// <summary>The OptimizerTunnelEnabled property</summary>
+        public bool? OptimizerTunnelEnabled { get; set; }
         /// <summary>Determines if image watermarking should be enabled</summary>
         public bool? OptimizerWatermarkEnabled { get; set; }
         /// <summary>Sets the minimum image size to which the watermark will be added</summary>
@@ -455,6 +459,24 @@ namespace BunnyApiClient.Models.PullZone
         public bool? ShieldDDosProtectionEnabled { get; set; }
         /// <summary>The ShieldDDosProtectionType property</summary>
         public double? ShieldDDosProtectionType { get; set; }
+        /// <summary>The StickySessionClientHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? StickySessionClientHeaders { get; set; }
+#nullable restore
+#else
+        public UntypedNode StickySessionClientHeaders { get; set; }
+#endif
+        /// <summary>The StickySessionCookieName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StickySessionCookieName { get; set; }
+#nullable restore
+#else
+        public string StickySessionCookieName { get; set; }
+#endif
+        /// <summary>The StickySessionType property</summary>
+        public int? StickySessionType { get; set; }
         /// <summary>The ID of the storage zone that the pull zone is linked to</summary>
         public long? StorageZoneId { get; set; }
         /// <summary>The Type property</summary>
@@ -601,6 +623,7 @@ namespace BunnyApiClient.Models.PullZone
                 { "OptimizerClasses", n => { OptimizerClasses = n.GetCollectionOfObjectValues<global::BunnyApiClient.Models.PullZone.Optimizer.OptimizerClass>(global::BunnyApiClient.Models.PullZone.Optimizer.OptimizerClass.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "OptimizerDesktopMaxWidth", n => { OptimizerDesktopMaxWidth = n.GetIntValue(); } },
                 { "OptimizerEnableManipulationEngine", n => { OptimizerEnableManipulationEngine = n.GetBoolValue(); } },
+                { "OptimizerEnableUpscaling", n => { OptimizerEnableUpscaling = n.GetBoolValue(); } },
                 { "OptimizerEnableWebP", n => { OptimizerEnableWebP = n.GetBoolValue(); } },
                 { "OptimizerEnabled", n => { OptimizerEnabled = n.GetBoolValue(); } },
                 { "OptimizerForceClasses", n => { OptimizerForceClasses = n.GetBoolValue(); } },
@@ -612,6 +635,7 @@ namespace BunnyApiClient.Models.PullZone
                 { "OptimizerStaticHtmlEnabled", n => { OptimizerStaticHtmlEnabled = n.GetBoolValue(); } },
                 { "OptimizerStaticHtmlWordPressBypassCookie", n => { OptimizerStaticHtmlWordPressBypassCookie = n.GetStringValue(); } },
                 { "OptimizerStaticHtmlWordPressPath", n => { OptimizerStaticHtmlWordPressPath = n.GetStringValue(); } },
+                { "OptimizerTunnelEnabled", n => { OptimizerTunnelEnabled = n.GetBoolValue(); } },
                 { "OptimizerWatermarkEnabled", n => { OptimizerWatermarkEnabled = n.GetBoolValue(); } },
                 { "OptimizerWatermarkMinImageSize", n => { OptimizerWatermarkMinImageSize = n.GetIntValue(); } },
                 { "OptimizerWatermarkOffset", n => { OptimizerWatermarkOffset = n.GetDoubleValue(); } },
@@ -647,6 +671,9 @@ namespace BunnyApiClient.Models.PullZone
                 { "RoutingFilters", n => { RoutingFilters = n.GetCollectionOfEnumValues<global::BunnyApiClient.Models.PullZone.PullZoneCreate_RoutingFilters>()?.AsList(); } },
                 { "ShieldDDosProtectionEnabled", n => { ShieldDDosProtectionEnabled = n.GetBoolValue(); } },
                 { "ShieldDDosProtectionType", n => { ShieldDDosProtectionType = n.GetDoubleValue(); } },
+                { "StickySessionClientHeaders", n => { StickySessionClientHeaders = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "StickySessionCookieName", n => { StickySessionCookieName = n.GetStringValue(); } },
+                { "StickySessionType", n => { StickySessionType = n.GetIntValue(); } },
                 { "StorageZoneId", n => { StorageZoneId = n.GetLongValue(); } },
                 { "Type", n => { Type = n.GetDoubleValue(); } },
                 { "UseBackgroundUpdate", n => { UseBackgroundUpdate = n.GetBoolValue(); } },
@@ -753,6 +780,7 @@ namespace BunnyApiClient.Models.PullZone
             writer.WriteIntValue("OptimizerDesktopMaxWidth", OptimizerDesktopMaxWidth);
             writer.WriteBoolValue("OptimizerEnabled", OptimizerEnabled);
             writer.WriteBoolValue("OptimizerEnableManipulationEngine", OptimizerEnableManipulationEngine);
+            writer.WriteBoolValue("OptimizerEnableUpscaling", OptimizerEnableUpscaling);
             writer.WriteBoolValue("OptimizerEnableWebP", OptimizerEnableWebP);
             writer.WriteBoolValue("OptimizerForceClasses", OptimizerForceClasses);
             writer.WriteIntValue("OptimizerImageQuality", OptimizerImageQuality);
@@ -763,6 +791,7 @@ namespace BunnyApiClient.Models.PullZone
             writer.WriteBoolValue("OptimizerStaticHtmlEnabled", OptimizerStaticHtmlEnabled);
             writer.WriteStringValue("OptimizerStaticHtmlWordPressBypassCookie", OptimizerStaticHtmlWordPressBypassCookie);
             writer.WriteStringValue("OptimizerStaticHtmlWordPressPath", OptimizerStaticHtmlWordPressPath);
+            writer.WriteBoolValue("OptimizerTunnelEnabled", OptimizerTunnelEnabled);
             writer.WriteBoolValue("OptimizerWatermarkEnabled", OptimizerWatermarkEnabled);
             writer.WriteIntValue("OptimizerWatermarkMinImageSize", OptimizerWatermarkMinImageSize);
             writer.WriteDoubleValue("OptimizerWatermarkOffset", OptimizerWatermarkOffset);
@@ -798,6 +827,9 @@ namespace BunnyApiClient.Models.PullZone
             writer.WriteCollectionOfEnumValues<global::BunnyApiClient.Models.PullZone.PullZoneCreate_RoutingFilters>("RoutingFilters", RoutingFilters);
             writer.WriteBoolValue("ShieldDDosProtectionEnabled", ShieldDDosProtectionEnabled);
             writer.WriteDoubleValue("ShieldDDosProtectionType", ShieldDDosProtectionType);
+            writer.WriteObjectValue<UntypedNode>("StickySessionClientHeaders", StickySessionClientHeaders);
+            writer.WriteStringValue("StickySessionCookieName", StickySessionCookieName);
+            writer.WriteIntValue("StickySessionType", StickySessionType);
             writer.WriteLongValue("StorageZoneId", StorageZoneId);
             writer.WriteDoubleValue("Type", Type);
             writer.WriteBoolValue("UseBackgroundUpdate", UseBackgroundUpdate);

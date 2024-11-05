@@ -4,6 +4,8 @@ using BunnyApiClient.Models.PullZone;
 using BunnyApiClient.Pullzone.Checkavailability;
 using BunnyApiClient.Pullzone.Item;
 using BunnyApiClient.Pullzone.LoadFreeCertificate;
+using BunnyApiClient.Pullzone.SetZoneSecurityEnabled;
+using BunnyApiClient.Pullzone.SetZoneSecurityIncludeHashRemoteIPEnabled;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -22,7 +24,7 @@ namespace BunnyApiClient.Pullzone
     /// <summary>
     /// Builds and executes requests for operations under \pullzone
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PullzoneRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -185,6 +187,40 @@ namespace BunnyApiClient.Pullzone
             return command;
         }
         /// <summary>
+        /// The setZoneSecurityEnabled property
+        /// </summary>
+        /// <returns>A <see cref="Command"/></returns>
+        public Command BuildSetZoneSecurityEnabledNavCommand()
+        {
+            var command = new Command("set-zone-security-enabled");
+            command.Description = "The setZoneSecurityEnabled property";
+            var builder = new global::BunnyApiClient.Pullzone.SetZoneSecurityEnabled.SetZoneSecurityEnabledRequestBuilder(PathParameters);
+            var execCommands = new List<Command>();
+            execCommands.Add(builder.BuildPostCommand());
+            foreach (var cmd in execCommands)
+            {
+                command.AddCommand(cmd);
+            }
+            return command;
+        }
+        /// <summary>
+        /// The setZoneSecurityIncludeHashRemoteIPEnabled property
+        /// </summary>
+        /// <returns>A <see cref="Command"/></returns>
+        public Command BuildSetZoneSecurityIncludeHashRemoteIPEnabledNavCommand()
+        {
+            var command = new Command("set-zone-security-include-hash-remote-i-p-enabled");
+            command.Description = "The setZoneSecurityIncludeHashRemoteIPEnabled property";
+            var builder = new global::BunnyApiClient.Pullzone.SetZoneSecurityIncludeHashRemoteIPEnabled.SetZoneSecurityIncludeHashRemoteIPEnabledRequestBuilder(PathParameters);
+            var execCommands = new List<Command>();
+            execCommands.Add(builder.BuildPostCommand());
+            foreach (var cmd in execCommands)
+            {
+                command.AddCommand(cmd);
+            }
+            return command;
+        }
+        /// <summary>
         /// Instantiates a new <see cref="global::BunnyApiClient.Pullzone.PullzoneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -241,7 +277,7 @@ namespace BunnyApiClient.Pullzone
         /// <summary>
         /// [ListPullZones API Docs](https://docs.bunny.net/reference/pullzonepublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PullzoneRequestBuilderGetQueryParameters 
         {
             /// <summary>Determines if the result hostnames should contain the SSL certificate</summary>

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.User
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class User : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -36,6 +36,8 @@ namespace BunnyApiClient.Models.User
         public DateTimeOffset? BillingFreeUntilDate { get; set; }
         /// <summary>The BillingType property</summary>
         public double? BillingType { get; set; }
+        /// <summary>The CardVerified property</summary>
+        public bool? CardVerified { get; set; }
         /// <summary>The city of the user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +152,8 @@ namespace BunnyApiClient.Models.User
         public bool? Suspended { get; set; }
         /// <summary>The total bandwidth used by the account.</summary>
         public long? TotalBandwidthUsed { get; set; }
+        /// <summary>The TrialBalance property</summary>
+        public double? TrialBalance { get; set; }
         /// <summary>The total free trial bandwidth limit for this account</summary>
         public long? TrialBandwidthLimit { get; set; }
         /// <summary>Determines if the account has 2FA enabled</summary>
@@ -202,6 +206,7 @@ namespace BunnyApiClient.Models.User
                 { "BillingEmail", n => { BillingEmail = n.GetStringValue(); } },
                 { "BillingFreeUntilDate", n => { BillingFreeUntilDate = n.GetDateTimeOffsetValue(); } },
                 { "BillingType", n => { BillingType = n.GetDoubleValue(); } },
+                { "CardVerified", n => { CardVerified = n.GetBoolValue(); } },
                 { "City", n => { City = n.GetStringValue(); } },
                 { "CompanyName", n => { CompanyName = n.GetStringValue(); } },
                 { "Country", n => { Country = n.GetStringValue(); } },
@@ -226,6 +231,7 @@ namespace BunnyApiClient.Models.User
                 { "StreetAddress", n => { StreetAddress = n.GetStringValue(); } },
                 { "Suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "TotalBandwidthUsed", n => { TotalBandwidthUsed = n.GetLongValue(); } },
+                { "TrialBalance", n => { TrialBalance = n.GetDoubleValue(); } },
                 { "TrialBandwidthLimit", n => { TrialBandwidthLimit = n.GetLongValue(); } },
                 { "TwoFactorAuthenticationEnabled", n => { TwoFactorAuthenticationEnabled = n.GetBoolValue(); } },
                 { "UnreadSupportTicketCount", n => { UnreadSupportTicketCount = n.GetIntValue(); } },
@@ -245,6 +251,7 @@ namespace BunnyApiClient.Models.User
             writer.WriteStringValue("BillingEmail", BillingEmail);
             writer.WriteDateTimeOffsetValue("BillingFreeUntilDate", BillingFreeUntilDate);
             writer.WriteDoubleValue("BillingType", BillingType);
+            writer.WriteBoolValue("CardVerified", CardVerified);
             writer.WriteStringValue("City", City);
             writer.WriteStringValue("CompanyName", CompanyName);
             writer.WriteStringValue("Country", Country);
@@ -269,6 +276,7 @@ namespace BunnyApiClient.Models.User
             writer.WriteStringValue("StreetAddress", StreetAddress);
             writer.WriteBoolValue("Suspended", Suspended);
             writer.WriteLongValue("TotalBandwidthUsed", TotalBandwidthUsed);
+            writer.WriteDoubleValue("TrialBalance", TrialBalance);
             writer.WriteLongValue("TrialBandwidthLimit", TrialBandwidthLimit);
             writer.WriteBoolValue("TwoFactorAuthenticationEnabled", TwoFactorAuthenticationEnabled);
             writer.WriteIntValue("UnreadSupportTicketCount", UnreadSupportTicketCount);

@@ -18,7 +18,7 @@ namespace BunnyApiClient.Dnszone.Item.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \dnszone\{-id}\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -103,7 +103,7 @@ namespace BunnyApiClient.Dnszone.Item.Statistics
         /// <summary>
         /// [GetDnsQueryStatistics API Docs](https://docs.bunny.net/reference/dnszonepublic_statistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned</summary>

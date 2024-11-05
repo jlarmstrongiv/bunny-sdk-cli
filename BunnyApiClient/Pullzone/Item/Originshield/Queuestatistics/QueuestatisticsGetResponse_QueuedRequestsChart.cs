@@ -10,7 +10,7 @@ namespace BunnyApiClient.Pullzone.Item.Originshield.Queuestatistics
     /// <summary>
     /// The constructed chart of origin shield requests chart
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueuestatisticsGetResponse_QueuedRequestsChart : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

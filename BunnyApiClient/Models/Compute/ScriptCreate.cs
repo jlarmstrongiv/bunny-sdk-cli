@@ -7,13 +7,31 @@ using System.IO;
 using System;
 namespace BunnyApiClient.Models.Compute
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class ScriptCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
+        /// <summary>The CreateLinkedPullZone property</summary>
+        public bool? CreateLinkedPullZone { get; set; }
+        /// <summary>The Integration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::BunnyApiClient.Models.Compute.Integration? Integration { get; set; }
+#nullable restore
+#else
+        public global::BunnyApiClient.Models.Compute.Integration Integration { get; set; }
+#endif
         /// <summary>The Name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +67,9 @@ namespace BunnyApiClient.Models.Compute
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "Code", n => { Code = n.GetStringValue(); } },
+                { "CreateLinkedPullZone", n => { CreateLinkedPullZone = n.GetBoolValue(); } },
+                { "Integration", n => { Integration = n.GetObjectValue<global::BunnyApiClient.Models.Compute.Integration>(global::BunnyApiClient.Models.Compute.Integration.CreateFromDiscriminatorValue); } },
                 { "Name", n => { Name = n.GetStringValue(); } },
                 { "ScriptType", n => { ScriptType = n.GetDoubleValue(); } },
             };
@@ -60,6 +81,9 @@ namespace BunnyApiClient.Models.Compute
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("Code", Code);
+            writer.WriteBoolValue("CreateLinkedPullZone", CreateLinkedPullZone);
+            writer.WriteObjectValue<global::BunnyApiClient.Models.Compute.Integration>("Integration", Integration);
             writer.WriteStringValue("Name", Name);
             writer.WriteDoubleValue("ScriptType", ScriptType);
             writer.WriteAdditionalData(AdditionalData);

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace StreamApiClient.Library.Item.Videos.Fetch
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FetchPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

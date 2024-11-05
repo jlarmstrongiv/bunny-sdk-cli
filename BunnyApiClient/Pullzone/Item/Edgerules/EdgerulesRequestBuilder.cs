@@ -17,7 +17,7 @@ namespace BunnyApiClient.Pullzone.Item.Edgerules
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}\edgerules
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdgerulesRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

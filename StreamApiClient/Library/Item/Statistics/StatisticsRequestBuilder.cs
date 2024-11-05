@@ -18,7 +18,7 @@ namespace StreamApiClient.Library.Item.Statistics
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\statistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -115,7 +115,7 @@ namespace StreamApiClient.Library.Item.Statistics
         /// <summary>
         /// [GetVideoStatistics API Docs](https://docs.bunny.net/reference/video_getvideostatistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned.</summary>

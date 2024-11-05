@@ -19,7 +19,7 @@ namespace BunnyApiClient.Abusecase
     /// <summary>
     /// Builds and executes requests for operations under \abusecase
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbusecaseRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -112,7 +112,7 @@ namespace BunnyApiClient.Abusecase
         /// <summary>
         /// [ListAbuseCases API Docs](https://docs.bunny.net/reference/abusecasepublic_index)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AbusecaseRequestBuilderGetQueryParameters 
         {
             [QueryParameter("page")]

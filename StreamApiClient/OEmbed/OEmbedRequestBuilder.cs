@@ -18,7 +18,7 @@ namespace StreamApiClient.OEmbed
     /// <summary>
     /// Builds and executes requests for operations under \OEmbed
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OEmbedRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -31,7 +31,7 @@ namespace StreamApiClient.OEmbed
             command.Description = "[OEmbed API Docs](https://docs.bunny.net/reference/oembed_getoembed)";
             var urlOption = new Option<string>("--url") {
             };
-            urlOption.IsRequired = false;
+            urlOption.IsRequired = true;
             command.AddOption(urlOption);
             var maxWidthOption = new Option<int?>("--max-width") {
             };
@@ -83,14 +83,14 @@ namespace StreamApiClient.OEmbed
         /// Instantiates a new <see cref="global::StreamApiClient.OEmbed.OEmbedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
-        public OEmbedRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/OEmbed?expires={expires}{&maxHeight,maxWidth,token,url}", pathParameters)
+        public OEmbedRequestBuilder(Dictionary<string, object> pathParameters) : base("{+baseurl}/OEmbed?expires={expires}&url={url}{&maxHeight,maxWidth,token}", pathParameters)
         {
         }
         /// <summary>
         /// Instantiates a new <see cref="global::StreamApiClient.OEmbed.OEmbedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OEmbedRequestBuilder(string rawUrl) : base("{+baseurl}/OEmbed?expires={expires}{&maxHeight,maxWidth,token,url}", rawUrl)
+        public OEmbedRequestBuilder(string rawUrl) : base("{+baseurl}/OEmbed?expires={expires}&url={url}{&maxHeight,maxWidth,token}", rawUrl)
         {
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace StreamApiClient.OEmbed
         /// <summary>
         /// [OEmbed API Docs](https://docs.bunny.net/reference/oembed_getoembed)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OEmbedRequestBuilderGetQueryParameters 
         {
             [QueryParameter("expires")]

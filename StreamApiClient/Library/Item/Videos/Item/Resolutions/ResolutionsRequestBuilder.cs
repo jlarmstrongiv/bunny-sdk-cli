@@ -20,7 +20,7 @@ namespace StreamApiClient.Library.Item.Videos.Item.Resolutions
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos\{videoId}\resolutions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResolutionsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>

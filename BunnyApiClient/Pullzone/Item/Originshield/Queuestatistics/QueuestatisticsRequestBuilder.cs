@@ -18,7 +18,7 @@ namespace BunnyApiClient.Pullzone.Item.Originshield.Queuestatistics
     /// <summary>
     /// Builds and executes requests for operations under \pullzone\{-id}\originshield\queuestatistics
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueuestatisticsRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -109,7 +109,7 @@ namespace BunnyApiClient.Pullzone.Item.Originshield.Queuestatistics
         /// <summary>
         /// [GetOriginShieldQueueStatistics API Docs](https://docs.bunny.net/reference/pullzonepublic_originshieldconcurrencystatistics)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class QueuestatisticsRequestBuilderGetQueryParameters 
         {
             /// <summary>The start date of the statistics. If no value is passed, the last 30 days will be returned.</summary>

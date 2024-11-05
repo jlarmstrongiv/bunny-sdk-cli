@@ -21,7 +21,7 @@ namespace StreamApiClient.Library.Item.Videos
     /// <summary>
     /// Builds and executes requests for operations under \library\{libraryId}\videos
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VideosRequestBuilder : BaseCliRequestBuilder
     {
         /// <summary>
@@ -165,7 +165,7 @@ namespace StreamApiClient.Library.Item.Videos
                     q.QueryParameters.ItemsPerPage = itemsPerPage;
                     if (!string.IsNullOrEmpty(search)) q.QueryParameters.Search = search;
                     if (!string.IsNullOrEmpty(collection)) q.QueryParameters.Collection = collection;
-                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = (GetOrderByQueryParameterType)Enum.Parse(typeof(GetOrderByQueryParameterType), orderBy);
+                    if (!string.IsNullOrEmpty(orderBy)) q.QueryParameters.OrderBy = orderBy;
                 });
                 if (libraryId is not null) requestInfo.PathParameters.Add("libraryId", libraryId);
                 var response = await reqAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping: default, cancellationToken: cancellationToken) ?? Stream.Null;
@@ -232,7 +232,7 @@ namespace StreamApiClient.Library.Item.Videos
         /// <summary>
         /// [ListVideos API Docs](https://docs.bunny.net/reference/video_list)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VideosRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
